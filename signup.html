@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Sign Up</h2>
+    <input type="text" id="first-name" placeholder="First Name" required>
+    <input type="text" id="last-name" placeholder="Last Name" required>
+    <input type="text" id="city" placeholder="City" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button id="signup_btn">Sign Up</button>
+    <p id="error-msg"></p>
+    <a href="index.html">Already have an account? Login</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+</body>
+</html>
