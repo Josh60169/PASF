@@ -1,0 +1,13 @@
+.calcBox {
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #5b5a5a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+}
+
+#calculator-boxes {
+    display: block;
+
+}

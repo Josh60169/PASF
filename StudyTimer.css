@@ -1,0 +1,31 @@
+#label-timer {
+
+}
+#time {
+
+}
+#text {
+
+}
+#label-presets{
+
+}
+#presets{
+
+}
+button{
+    display: block;
+    margin: 50px auto;
+    padding: 20px;
+}
+#left{
+    display: inline-block;
+    margin: 50px auto;
+    padding: 20px;
+}
+#right{
+    display: inline-block;
+    margin: 50px auto;
+    padding: 20px;
+}
+

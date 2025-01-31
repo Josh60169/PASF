@@ -2,18 +2,16 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #094caf;
 }
-h2{
-    font-family: "Wide Latin", Helvetica, sans-serif;
-    color:#79ceff;
-}
+
 .container{
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
     background-color: #5b5a5a;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: 25px;
 }
+
 button{
     background-color: #d1d1d1;
     color: #000000;
@@ -41,9 +39,69 @@ nav {
 
 .nav-element {
     float: left;
-    margin: 3px 0px 3px 300px;
+    margin: 3px 0px 3px 250px;
     padding: 5px;
     list-style-type: none;
     display: block;
     justify-content: center;
+}
+
+.headerOrbitron{
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #79ceff;
+    font-size: 75px;
+}
+.regularOrbitron{
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.boldRobotoF{
+    font-family: "RobotoF", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+.regularRobotoF{
+    font-family: "RobotoF", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#clipboard{
+    width: 37px;
+    height: 50px;
+}
+
+#study-timer {
+    width: 50px;
+    height: 50px;
+}
+
+#final-calc {
+    width: 38px;
+    height: 50px;
+}
+#account{
+    width: 38px;
+    height: 50px;
+}
+
+#hr-line {
+    border-width: 5px;
+}
+#logo {
+    width: 180px;
+    height: 50px;
+}
+.VerticalList{
+    display: block;
+}
+.horizontalList{
+    display: inline-block;
 }
