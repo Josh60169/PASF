@@ -22,8 +22,11 @@
         <div class="container" id="time">
             <h3 id="timer-time" class="regularOrbitron">00:00:00</h3>
         </div>
-        <div id="start">
-            <button id="start-btn" onclick="startTimer()">Start</button>
+        <div id="timer-btns" class="container-fluid">
+            <div class="row">
+                <button id="start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info">Start</button>
+                <button id="stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info">Stop</button>
+            </div>
         </div>
         <div class="container" id="text">
             <h3 class="regularRobotoF">The study timer helps you stay focused on your work. Just select a how long you want to work for or make a custom timer if you don’t see what you want.</h3>
