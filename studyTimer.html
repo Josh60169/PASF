@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="StudyTimer.css">
+    <title>PASF ► Timers</title>
+    <script src="studyTimer.js" defer></script>
+</head>
+<body>
+<h2 class="text-center headerOrbitron" style="margin-top: 50px" id="main-menu-header">STUDY TIMER</h2>
+<hr id="hr-line"><br>
+<div class="text-center">
+    <div id="left">
+        <div class="container" id="label-timer">
+            <h3 class="boldRobotoF">Timer</h3>
+        </div>
+        <div class="container" id="time">
+            <h3 id="timer-time" class="regularOrbitron">00:00:00</h3>
+        </div>
+        <div id="start">
+            <button id="start-btn" onclick="startTimer()">Start</button>
+        </div>
+        <div class="container" id="text">
+            <h3 class="regularRobotoF">The study timer helps you stay focused on your work. Just select a how long you want to work for or make a custom timer if you don’t see what you want.</h3>
+        </div>
+    </div>
+    <div id="right">
+        <div class="container" id="label-presets">
+            <h3 class="boldRobotoF">Presets</h3>
+        </div>
+        <div class="container" id="presets">
+            <button id="p1" class="regularRobotoF btn-default" onclick="setTimer(1, 0, 0)">01:00:00</button>
+            <button id="p2" class="regularRobotoF btn-default" onclick="setTimer(0, 30, 0)">00:30:00</button>
+            <button id="p3" class="regularRobotoF btn-default" onclick="setTimer(0, 15, 0)">00:15:00</button>
+            <button id="p4" class="regularRobotoF btn-default" onclick="setTimer(0, 5, 0)">00:05:00</button>
+            <div>
+                <button id="p5" class="regularRobotoF btn-default" onclick="customBtnClick()">Custom</button>
+                <form id="customInputBox" style="padding: 10px">
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <label for="custom-time-hrs">Hrs</label><input type="text" name="cust-hrs" id="custom-time-hrs" required>
+                        </div>
+                        <div class="col-xs-1">
+                            <label for="custom-time-mins">Min</label><input type="text" name="cust-mins" id="custom-time-mins">
+                        </div>
+                        <div class="col-xs-1">
+                            <label for="custom-time-secs">Sec</label><input type="text" name="cust-secs" id="custom-time-secs" required>
+                        </div>
+                    </div>
+                    <label for="pomodoro">Pomodoro</label><input type="radio" name="radAns" id="pomodoro" required><br>
+                    <label for="stopwatch">Stopwatch</label><input type="radio" name="radAns" id="stopwatch"><br>
+                    <label for="time-box">Time Boxing</label><input type="radio" name="radAns" id="time-box"><br>
+                    <label for="standard">Standard</label><input type="radio" name="radAns" id="standard"><br>
+                    <input type="submit" name="cust-time-btn" id="cust-time-btn" class="btn-default">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id="nav-div">
+        <nav>
+            <ul>
+                <li class="nav-element">
+                    <a href="organizer.html">
+                        <img src="assets/clipboard.png" alt="Organizer" id="clipboard">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="studyTimer.html">
+                        <img src="assets/timer.png" alt="Study Timer" id="study-timer">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="finalExamCalculator.html">
+                        <img src="assets/Final%20calculator.png" alt="Final Exam Calculator" id="final-calc">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="account.html">
+                        <img src="assets/person.png" alt="Account" id="account">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="mainMenu.html">
+                        <img src="assets/pasf.png" alt="logo" id="logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--<div class="container-fluid">
+        <div id="box">
+            <p id="about">Description about studyTimer</p>
+        </div>
+    </div>-->
+</div>
+</body>
+</html>

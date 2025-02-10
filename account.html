@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>PASF ► Account</title>
+</head>
+<body>
+<h2 class="text-center headerOrbitron" style="margin-top: 50px" id="main-menu-header">ACCOUNT</h2>
+<hr id="hr-line"><br>
+<div class="container">
+    <div class="VerticalList">
+        <div class="horizontalList">
+            <h2 class="regularOrbitron">First Name</h2>
+            <input type="text" id="change-first-name" placeholder="First Name" required>
+
+        </div>
+        <div class="horizontalList">
+            <h2 class="regularOrbitron">Last Name:</h2>
+            <input type="text" id="change-last-name" placeholder="Last Name" required>
+
+        </div>
+        <div class="horizontalList">
+            <h2 class="regularOrbitron">City:</h2>
+            <input type="text" id="change-city" placeholder="City" required>
+        </div>
+        <div class="horizontalList">
+            <h2 class="regularOrbitron">Email:</h2>
+            <h2 id="email" class="regularOrbitron">Email@email.email</h2>
+        </div>
+    </div>
+    <div id="profile-data"></div>
+    <a href="logout.html">Logout</a>
+    <button id="update_btn">Update</button>
+</div>
+
+<div class="container">
+    <div id="nav-div">
+        <nav>
+            <ul>
+                <li class="nav-element">
+                    <a href="organizer.html">
+                        <img src="assets/clipboard.png" alt="Organizer" id="clipboard">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="studyTimer.html">
+                        <img src="assets/timer.png" alt="Study Timer" id="study-timer">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="finalExamCalculator.html">
+                        <img src="assets/Final%20calculator.png" alt="Final Exam Calculator" id="final-calc">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="account.html">
+                        <img src="assets/person.png" alt="Account" id="account">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="mainMenu.html">
+                        <img src="assets/pasf.png" alt="logo" id="logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="data.js"></script>
+</body>
+</html>
