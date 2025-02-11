@@ -33,8 +33,29 @@ async function getUserProfile(){
 }
 
 const addBtnClicked = () => {
-
+    let form = document.getElementById("add-form");
+    if (form.style.display === 'none')
+        form.style.display = 'inline';
+    else
+        form.style.display = 'none';
 };
+
 const removeBtnClicked = () => {
-
+    let form = document.getElementById("remove-form");
+    if (form.style.display === 'none')
+        form.style.display = 'inline';
+    else
+        form.style.display = 'none';
 };
+
+document.getElementById("add-form").addEventListener('submit', (event) => {
+    event.preventDefault();
+
+
+});
+
+document.getElementById("remove-form").addEventListener('submit', (event) => {
+    event.preventDefault();
+
+
+});
