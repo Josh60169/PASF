@@ -73,10 +73,10 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
 
 document.getElementById("remove-form").addEventListener('submit', (event) => {
     event.preventDefault();
-    document.getElementById('add-form').style.display = 'none';
-
+    //document.getElementById('add-form').style.display = 'none';
     let idToRemove = document.getElementById("org-remove-txtbox").value;
     removeTask(idToRemove);
+    document.getElementById("remove-form").style.display = 'none';
     updateDisplay();
 });
 
