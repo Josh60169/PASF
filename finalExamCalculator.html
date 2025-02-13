@@ -49,14 +49,14 @@
         <div id="percent" class="col-sm-3 calcBox">
             <div class="row">
                 <div class="col-sm-3 text-center"><p class="boldRobotoF">Percent of grade</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="grade_percent"></div>
             </div>
         </div>
 
         <div id="current-grade" class="col-sm-3 calcBox regularRobotoF">
             <div class="row">
                 <div class="col-sm-3 text-center"><p class="boldRobotoF">Current Grade</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="current_grade"></div>
             </div>
         </div>
 
@@ -69,28 +69,28 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-3 text-center"><p class="boldRobotoF">A</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><p class="boldRobotoF">A:</p></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="A_curve"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-3 text-center"><p class="boldRobotoF">B</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><p class="boldRobotoF">B:</p></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="B_curve"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-3 text-center"><p class="boldRobotoF">C</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><p class="boldRobotoF">C:</p></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="C_curve"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-3 text-center"><p class="boldRobotoF">D</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><p class="boldRobotoF">D:</p></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="D_curve"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-3 text-center"><p class="boldRobotoF">F</p></div>
-                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF"></div>
+                <div class="col-sm-3 text-center"><p class="boldRobotoF">F:</p></div>
+                <div class="col-sm-3 text-center"><input type="text" class="regularRobotoF" id="F_curve"></div>
             </div>
         </div>
 
@@ -101,9 +101,10 @@
             <p class="regularRobotoF" id="C">C: you need a ___% on your final</p>
             <p class="regularRobotoF" id="D">D: you need a ___% on your final</p>
             <p class="regularRobotoF" id="F">F: you need a ___% on your final</p>
-            <button>Update</button>
+            <button id="FEC_updateBtn">Update</button>
         </div>
     </div>
 </div>
+<script src="finalExamCalculator.js" ></script>
 </body>
 </html>
