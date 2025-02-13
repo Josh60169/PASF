@@ -19,3 +19,19 @@
 button {
     margin: 5px;
 }
+
+#add-form {
+    background-color: #5b5a5a;
+    box-shadow: 0 0 10px;
+    padding: 90px;
+    margin-left: 65em;
+    margin-top: 2em;
+}
+
+.dueDateTxtBox {
+    width: 30px;
+}
+
+#remove-form {
+    margin-left: 65em;
+}
