@@ -31,7 +31,25 @@ async function getUserProfile(){
 
     return userProfile;
 }
+async function fetchProfile(){
+    const sessions = await supabase.auth.getSession();
+    const userProfile = (await getUserProfile(sessions))[0];
+    if (userProfile){
+        console.log('User profile: ', userProfile);
+        //fetch user data and save to the tasks array
+        this.tasks[0].set(userProfile.tasks);
+        this.tasks[1].set(userProfile.taskImportance);
+        this.tasks[2].set(userProfile.dueDay);
+        this.tasks[3].set(userProfile.dueMonth);
+        this.tasks[4].set(userProfile.idAssigner);
 
+
+    }
+}
+
+fetchProfile().catch((error) => {
+    console.log('Error: ',error);
+})
 // variables for organizer
 const tasks = [];
 let idAssigner = 1;
@@ -67,16 +85,17 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
     idAssigner++;
 
+    updateSupabaseArrays();
     // re-render the display
     updateDisplay();
 });
 
 document.getElementById("remove-form").addEventListener('submit', (event) => {
     event.preventDefault();
-    document.getElementById('add-form').style.display = 'none';
-
+    //document.getElementById('add-form').style.display = 'none';
     let idToRemove = document.getElementById("org-remove-txtbox").value;
     removeTask(idToRemove);
+    document.getElementById("remove-form").style.display = 'none';
     updateDisplay();
 });
 
@@ -110,5 +129,31 @@ const removeTask = (id) => {
         console.log('hi')
         console.log(tasks[i][4]);
     }
-    idAssigner--;
+    idAssigner--
+
+    updateSupabaseArrays();
 };
+const updateSupabaseArrays = async () =>{
+    const userProfile = await getUserProfile(sessions);
+    console.log(userProfile);
+    if (userProfile){
+        const userUUID = userProfile[0].id;
+
+        const { error } =
+            await supabase.from('table1').update({
+                tasks:this.tasks[0],
+                taskImportance:this.tasks[1],
+                dueDay:this.tasks[2],
+                dueMonth:this.tasks[3],
+                idAssigner:this.tasks[4],
+            }).eq('id', userUUID);
+
+        if (error){
+            console.log("orginizer.js: Error updating data: ",error.message);
+        } else {
+            window.location.href ='organizer.html';
+        }
+    } else {
+        console.log('orginizer.js: Custom error: userProfile not found');
+    }
+}
