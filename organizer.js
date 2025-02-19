@@ -3,6 +3,10 @@ const{createClient} = window.supabase;
 const supabaseURL  = "https://weqsojkxxgxhdljikuaa.supabase.co";
 const supabaseAnonKey  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlcXNvamt4eGd4aGRsamlrdWFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwNzEzNTMsImV4cCI6MjAzOTY0NzM1M30.08k0uw8gcUH-VYFHSbQEVlUbXDqTltxmh7COtAEJfIA";
 
+// variables for organizer
+let tasks = [];
+let idAssigner = 1;
+
 supabase = createClient(supabaseURL, supabaseAnonKey);
 //fetch amd display user data
 
@@ -37,22 +41,15 @@ async function fetchProfile(){
     if (userProfile){
         console.log('User profile: ', userProfile);
         //fetch user data and save to the tasks array
-        this.tasks[0].set(userProfile.tasks);
-        this.tasks[1].set(userProfile.taskImportance);
-        this.tasks[2].set(userProfile.dueDay);
-        this.tasks[3].set(userProfile.dueMonth);
-        this.tasks[4].set(userProfile.idAssigner);
-
-
+        tasks=(userProfile.task);
+        updateDisplay();
     }
 }
 
 fetchProfile().catch((error) => {
     console.log('Error: ',error);
 })
-// variables for organizer
-const tasks = [];
-let idAssigner = 1;
+
 
 // opens and closes the form if the buttons are clicked
 const addBtnClicked = () => {
@@ -141,17 +138,11 @@ const updateSupabaseArrays = async () =>{
 
         const { error } =
             await supabase.from('table1').update({
-                tasks:this.tasks[0],
-                taskImportance:this.tasks[1],
-                dueDay:this.tasks[2],
-                dueMonth:this.tasks[3],
-                idAssigner:this.tasks[4],
+                task:tasks,
             }).eq('id', userUUID);
 
         if (error){
             console.log("orginizer.js: Error updating data: ",error.message);
-        } else {
-            window.location.href ='organizer.html';
         }
     } else {
         console.log('orginizer.js: Custom error: userProfile not found');
