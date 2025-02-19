@@ -63,11 +63,8 @@
                     <div id="priority-div" class="col-sm-3">
                         <ul id="priority-list"/>
                     </div>
-
                     <button class="col-sm-2 boldRobotoF" id="addBtn" onclick="addBtnClicked()">ADD +</button>
-
                     <button class="col-sm-2 boldRobotoF" id="removeBtn" onclick="removeBtnClicked()">REMOVE -</button>
-
                     <form style="display: none" id="add-form" class="col-sm-3">
                         <label for="org-name-txtbox">Name</label><input type="text" id="org-name-txtbox"><br>
                         <label for="org-importance-slider">Importance</label><input type="range" min="1" max="100" value="50" id="org-importance-slider">
@@ -77,13 +74,13 @@
                         </div>
                         <input type="submit">
                     </form>
-
                     <form style="display: none" id="remove-form" class="col-sm-3">
-                        <div class="container">
+                        <div>
                             <label for="org-remove-txtbox">Remove by index:</label><input type="number" id="org-remove-txtbox">
                             <input type="submit">
                         </div>
                     </form>
+                    <div id="bottomScroll"></div>
                 </div>
             </div>
         </div>

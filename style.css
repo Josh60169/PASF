@@ -107,3 +107,9 @@ nav {
 .horizontalList{
     display: inline-block;
 }
+#signup_btn{
+    border-radius: 25px;
+}
+
+
+

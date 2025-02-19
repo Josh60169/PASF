@@ -16,7 +16,7 @@ loginBtn?.addEventListener("click", async () =>{
     if(error){
         document.getElementById("error-msg").textContent = error.message;
     }else {
-        window.location.href ='account.html';
+        window.location.href ='mainMenu.html';
     }
 });
 
