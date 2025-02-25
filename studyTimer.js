@@ -12,7 +12,7 @@ const customBtnClick = () => {
 // Implements the customized settings given from the user
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
-    timerMethod = document.querySelector('input[name="radAns"]:checked').id;
+    //timerMethod = document.querySelector('input[name="radAns"]:checked').id;
 
     setTimer(document.querySelector('input[name="cust-hrs"]').value, document.querySelector('input[name="cust-mins"]').value, document.querySelector('input[name="cust-secs"]').value);
 });

@@ -29,13 +29,14 @@ async function getUserProfile(){
 async function fetchProfile(){
     const sessions = await supabase.auth.getSession();
     const userProfile = (await getUserProfile(sessions))[0];
-    if (userProfile){
+    if (userProfile) {
         console.log('User profile: ', userProfile);
         //fetch user data and save to the tasks array
-        tasks=(userProfile.task);
-        idAssigner = (userProfile.task.length+1);
+        if (userProfile.task != null) {
+        tasks = (userProfile.task);
+        idAssigner = (userProfile.task.length + 1);
         console.log(idAssigner);
-        updateDisplay();
+        }updateDisplay();
     }
 }
 fetchProfile().catch((error) => {
@@ -89,13 +90,13 @@ const updateDisplay = () => {
     // re-renders assignment list
     for (let i = 0; i < tasks.length; i++) {
         let newAssignment = document.createElement('li');
-        newAssignment.innerText = `${tasks[i][0]}   Due Date: ${tasks[i][2]}/${tasks[i][3]}`;
+        newAssignment.innerText = `${tasks[i][0]}   \nDue Date: ${tasks[i][2]}/${tasks[i][3]}`;
         assignmentsDisplay.appendChild(newAssignment);
     }
     // re-renders priority list
     for (let j = 0; j < tasks.length; j++) {
         let newId = document.createElement('li');
-        newId.innerText = `Id: ${tasks[j][4]}`;
+        newId.innerText = `Id: ${tasks[j][4]} \n\n`;
         priorityDisplay.appendChild(newId);
     }
 };
@@ -103,7 +104,7 @@ const removeTask = (id) => {
     tasks.splice(id - 1, 1);
     for (let i = 0; i < tasks.length; i++) {
         tasks[i][4] = i + 1;
-        console.log('hi')
+        //console.log('hi')
         console.log(tasks[i][4]);
     }
     idAssigner--
