@@ -50,14 +50,13 @@ update_btn.addEventListener('click',async () => {
     const userProfile = await getUserProfile(session);
 
     if (userProfile){
-        const userUUID = userProfile[0].id;
-
         const { error } =
             await supabase.from('table1').update({
                 firstname: document.getElementById("change-first-name").value,
                 lastname: document.getElementById("change-last-name").value,
                 city: document.getElementById("change-city").value,
-            }).eq('id', userUUID);
+            }).eq('id', userProfile[0].id);
+
 
         if (error){
             console.log("update.js: Error updating data: ",error.message);

@@ -4,13 +4,14 @@ body{
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 100%;
 }
 
 .container{
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background: radial-gradient(#5b5a5a, #424242);
+    background: radial-gradient(#5a5a5a, #424242);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 25px;
 }
@@ -34,7 +35,7 @@ nav {
     display: inline;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, #302f2f, #545353);
+    background: radial-gradient(#5a5a5a, #424242);
     overflow: hidden;
     width: 100%;
 }
@@ -73,6 +74,18 @@ nav {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+.cyan{
+    color: #5ce1e6;
+}
+.lightBlue{
+    color: #79ceff;
+}
+.white{
+    color: white;
+}
+.red{
+    color: red;
 }
 
 #clipboard{

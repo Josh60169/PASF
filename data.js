@@ -64,6 +64,7 @@ update_btn.addEventListener('click',async () => {
         if (error){
             console.log("update.js: Error updating data: ",error.message);
             document.getElementById("error-msg").textContent = "update.js: Error updating data: "+error.message;
+            // Anthony: add a preventative measure; if we fail to update/save, we need to revert to a previous version to avoid data corruption
         } else {
             window.location.href ='account.html';
         }
