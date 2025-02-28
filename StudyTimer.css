@@ -1,22 +1,9 @@
-#label-timer {
 
-}
-#time {
-
-}
-#text {
-
-}
-#label-presets{
-
-}
-#presets{
-
-}
 button{
     display: block;
     margin: 50px auto;
     padding: 20px;
+    width: 100%;
 }
 #left{
     display: inline-block;
@@ -34,4 +21,10 @@ button{
     background-color: #5b5a5a;
     box-shadow: 0 0 10px;
     visibility: hidden;
+}
+#timerWarning{
+    font-size: 20px;
+}
+#timer-btns{
+    height: 25px;
 }
