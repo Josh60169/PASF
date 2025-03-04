@@ -6,7 +6,11 @@ let stopBtn =  document.getElementById("stop-btn");
 stopBtn.disabled = true;
 
 const customBtnClick = () => {
-    document.getElementById("customInputBox").style.visibility = "visible";
+    if(document.getElementById("customInputBox").style.visibility != "visible") {
+        document.getElementById("customInputBox").style.visibility = "visible";
+    }else{
+        document.getElementById("customInputBox").style.visibility = "hidden";
+    }
 };
 
 // Implements the customized settings given from the user

@@ -2,7 +2,7 @@
     max-width: 400px;
     margin: 10px;
     padding: 10px;
-    background: radial-gradient(#5b5a5a, #424242);
+    background: radial-gradient(#5a5a5a, #424242);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     text-align: center;
@@ -11,4 +11,10 @@
 #calculator-boxes {
     display: block;
 
+}
+#instruction-text{
+    width: 200em;
+}
+#bottomScroll{
+    height: 30em;
 }

@@ -17,10 +17,10 @@
 <div class="text-center">
     <div id="left">
         <div class="container" id="label-timer">
-            <h3 class="boldRobotoF">Timer</h3>
+            <h3 class="boldRobotoF white">Timer</h3>
         </div>
         <div class="container" id="time">
-            <h3 id="timer-time" class="regularOrbitron">00:00:00</h3>
+            <h3 id="timer-time" class="regularOrbitron white">00:00:00</h3>
         </div>
         <div id="timer-btns" class="container-fluid">
             <div class="row">
@@ -29,24 +29,21 @@
             </div>
         </div>
         <div class="container" id="text">
-            <h3 class="regularRobotoF">The study timer helps you stay focused on your work. Just select a how long you want to work for or make a custom timer if you don’t see what you want.</h3>
+            <h3 class="regularRobotoF cyan">The study timer helps you stay focused on your work. Just select a how long you want to work for or make a custom timer if you don’t see what you want.</h3>
         </div>
-        <div class="container" id="arcade">
-            <a href ="arcade.html" class="regularOrbitron"> Want to take a brake? Go to the arcade</a>
-            <h2 class="regularRobotoF" id="timerWarning">If you leave the study timer window it will clear the timer.</h2>
-        </div>
+
     </div>
     <div id="right">
         <div class="container" id="label-presets">
-            <h3 class="boldRobotoF">Presets</h3>
+            <h3 class="boldRobotoF white">Presets</h3>
         </div>
         <div class="container" id="presets">
-            <button id="p1" class="regularRobotoF btn-default" onclick="setTimer(1, 0, 0)">01:00:00</button>
-            <button id="p2" class="regularRobotoF btn-default" onclick="setTimer(0, 30, 0)">00:30:00</button>
-            <button id="p3" class="regularRobotoF btn-default" onclick="setTimer(0, 15, 0)">00:15:00</button>
-            <button id="p4" class="regularRobotoF btn-default" onclick="setTimer(0, 5, 0)">00:05:00</button>
+            <button id="p1" class="boldRobotoF btn-default" onclick="setTimer(1, 0, 0)">01:00:00</button>
+            <button id="p2" class="boldRobotoF btn-default" onclick="setTimer(0, 30, 0)">00:30:00</button>
+            <button id="p3" class="boldRobotoF btn-default" onclick="setTimer(0, 15, 0)">00:15:00</button>
+            <button id="p4" class="boldRobotoF btn-default" onclick="setTimer(0, 5, 0)">00:05:00</button>
             <div>
-                <button id="p5" class="regularRobotoF btn-default" onclick="customBtnClick()">Custom</button>
+                <button id="p5" class="boldRobotoF btn-default" onclick="customBtnClick()">Custom</button>
                 <form id="customInputBox" style="padding: 5px">
                     <div class="row">
                         <div class="col-xs-1">
@@ -66,6 +63,10 @@
                     <input type="submit" name="cust-time-btn" id="cust-time-btn" class="btn-default">
                 </form>
             </div>
+        </div>
+        <div class="container" id="arcade">
+            <a href ="arcade.html" class="regularOrbitron cyan" >Want to take a break? Go to the arcade</a>
+            <h2 class="regularRobotoF white" id="timerWarning">If you leave the study timer window it will clear the timer.</h2>
         </div>
     </div>
 </div>
