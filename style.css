@@ -124,7 +124,7 @@ nav {
 
 @media  (max-width: 600px) {
     .container {
-        max-width: 200px;
+        max-width: 250px;
         margin: 25px auto;
         padding: 10px;
         background: radial-gradient(#5a5a5a, #424242);

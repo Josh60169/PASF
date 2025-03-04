@@ -115,14 +115,25 @@ const updateSupabaseArrays = async () =>{
     console.log(userProfile);
     if (userProfile){
         const userUUID = userProfile[0].id;
+        const tasks = userProfile.task;
         const { error } =
             await supabase.from('table1').update({
-                task:tasks,
+                task:tasks
             }).eq('id', userUUID);
         if (error){
-            console.log("orginizer.js: Error updating data: ",error.message);
+            console.log("organizer.js: Error updating data: ",error.message);
+
+            console.log("organizer.js: MAJOR ERROR\nFailed to save data, attempting to revert data to a previous version to avoid corruption...");
+
+            const {error2} =
+                await supabase.from('table1').update({
+                    task: tasks
+                }).eq('id',userUUID);
+            if (error2){
+                console.log("organizer.js: MAJOR ERROR\nFailed to revert data to a previous version to avoid data corruption.");
+            }
         }
     } else {
-        console.log('orginizer.js: Custom error: userProfile not found');
+        console.log('organizer.js: Custom error: userProfile not found');
     }
 }
