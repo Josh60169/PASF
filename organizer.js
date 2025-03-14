@@ -33,10 +33,12 @@ async function fetchProfile(){
         console.log('User profile: ', userProfile);
         //fetch user data and save to the tasks array
         if (userProfile.task != null) {
-        tasks = (userProfile.task);
-        idAssigner = (userProfile.task.length + 1);
-        console.log(idAssigner);
-        }updateDisplay();
+            tasks = (userProfile.task);
+            idAssigner = (userProfile.task.length + 1);
+            console.log(idAssigner);
+        }
+        tasks=sort(tasks);
+        updateDisplay();
     }
 }
 fetchProfile().catch((error) => {
@@ -68,6 +70,7 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     let dueDay = parseInt(document.getElementById('org-date-day').value);
     tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
     idAssigner++;
+    tasks=sort(tasks);
     updateSupabaseArrays();
     // re-render the display
     updateDisplay();
@@ -90,13 +93,16 @@ const updateDisplay = () => {
     // re-renders assignment list
     for (let i = 0; i < tasks.length; i++) {
         let newAssignment = document.createElement('li');
+        if(tasks[i][2]>0||tasks[i][3]>0)
+            newAssignment.innerText = `${tasks[i][0]}   \nno Due Date`;
+        else
         newAssignment.innerText = `${tasks[i][0]}   \nDue Date: ${tasks[i][2]}/${tasks[i][3]}`;
         assignmentsDisplay.appendChild(newAssignment);
     }
     // re-renders priority list
     for (let j = 0; j < tasks.length; j++) {
         let newId = document.createElement('li');
-        newId.innerText = `Id: ${tasks[j][4]} \n\n`;
+        newId.innerText = `${tasks[j][4]} \n\n`;
         priorityDisplay.appendChild(newId);
     }
 };
@@ -110,30 +116,29 @@ const removeTask = (id) => {
     idAssigner--
     updateSupabaseArrays();
 };
+
 const updateSupabaseArrays = async () =>{
     const userProfile = await getUserProfile(sessions);
     console.log(userProfile);
     if (userProfile){
         const userUUID = userProfile[0].id;
-        const tasks = userProfile.task;
         const { error } =
             await supabase.from('table1').update({
-                task:tasks
+                task:tasks,
             }).eq('id', userUUID);
         if (error){
-            console.log("organizer.js: Error updating data: ",error.message);
-
-            console.log("organizer.js: MAJOR ERROR\nFailed to save data, attempting to revert data to a previous version to avoid corruption...");
-
-            const {error2} =
-                await supabase.from('table1').update({
-                    task: tasks
-                }).eq('id',userUUID);
-            if (error2){
-                console.log("organizer.js: MAJOR ERROR\nFailed to revert data to a previous version to avoid data corruption.");
-            }
+            console.log("orginizer.js: Error updating data: ",error.message);
         }
     } else {
-        console.log('organizer.js: Custom error: userProfile not found');
+        console.log('orginizer.js: Custom error: userProfile not found');
     }
+}
+function sort(arr){
+    arr = arr.sort((a, b) => b[1]-a[1]);
+    for (let i = 0; i < tasks.length; i++) {
+        tasks[i][4] = i + 1;
+        //console.log('hi')
+        console.log(tasks[i][4]);
+    }
+    return arr;
 }
