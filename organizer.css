@@ -1,5 +1,13 @@
 #assignments-div {
-    max-width: 400px;
+    width: 15em;
+    margin: 40px;
+    padding: 10px;
+    background: radial-gradient(#5a5a5a, #424242);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+}
+#priority-div {
+    width: 10em;
     margin: 40px;
     padding: 10px;
     background: radial-gradient(#5a5a5a, #424242);
@@ -7,13 +15,8 @@
     border-radius: 25px;
 }
 
-#priority-div {
-    max-width: 400px;
-    margin: 40px;
-    padding: 10px;
-    background: radial-gradient(#5a5a5a, #424242);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 25px;
+.listFont{
+    font-size: 15px;
 }
 
 button {
@@ -23,13 +26,23 @@ button {
 #add-form {
     background: radial-gradient(#5a5a5a, #424242);
     box-shadow: 0 0 10px;
-    padding: 20px;
-    margin-left: 65em;
+    padding: 10px;
+    margin-left: 0;
     margin-top: 0;
     border-radius: 15px;
-    width: 20em;
+    width: 400px;
+    height: 400px;
 }
-
+#sort-form {
+    background: radial-gradient(#5a5a5a, #424242);
+    box-shadow: 0 0 10px;
+    padding: 10px;
+    margin-left: 0;
+    margin-top: 0;
+    border-radius: 15px;
+    width: 400px;
+    height: 400px;
+}
 .dueDateTxtBox {
     width: 4em;
 }
@@ -37,28 +50,188 @@ button {
 #remove-form {
     background: radial-gradient(#5a5a5a, #424242);
     box-shadow: 0 0 10px;
-    padding: 20px;
-    margin-left: 65em;
+    padding: 10px;
+    margin-left: 0;
     margin-top: 0;
     border-radius: 15px;
-    width: 20em;
+    width: 400px;
+    height: 400px;
 }
 #addBtn{
     background: linear-gradient(90deg, #038400, #00ff21);
     border: none;
     cursor: pointer;
     border-radius: 25px;
-    font-size: 50px;
+    font-size: 30px;
     height:2em;
+    width: 8em;
 }
 #removeBtn{
     background: linear-gradient(90deg, #b50101, #ff0000);
     border: none;
     cursor: pointer;
     border-radius: 25px;
-    font-size: 50px;
+    font-size: 30px;
     height:2em;
+    width: 8em;
+}
+#sortBtn{
+    background: linear-gradient(90deg, #b59101, #fff200);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 30px;
+    height:2em;
+    width: 8em;
 }
 #bottomScroll{
-    height: 30em;
+    height: 40em;
+}
+
+@media (max-width: 1200px) and (min-width: 601px) {
+    #assignments-div {
+        width: 20em;
+        margin: 40px;
+        padding: 10px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 25px;
+        font-size: 10px;
+    }
+
+    #priority-div {
+        width: 13em;
+        margin: 40px;
+        padding: 10px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 25px;
+        font-size: 10px;
+    }
+
+    .listFont{
+        font-size: 13px;
+    }
+
+    #addBtn{
+        background: linear-gradient(90deg, #038400, #00ff21);
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        height:2em;
+        width: 7em;
+    }
+    #removeBtn{
+        background: linear-gradient(90deg, #b50101, #ff0000);
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        height:2em;
+        width: 7em;
+    }
+    #sortBtn{
+        background: linear-gradient(90deg, #b59101, #fff200);
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        height:2em;
+        width: 7em;
+    }
+
+    #add-form {
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px;
+        padding: 2px;
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: 7px;
+        width: 8em;
+    }
+    #remove-form {
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px;
+        padding: 2px;
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: 7px;
+        width: 8em;
+    }
+}
+
+@media (max-width: 600px) {
+    #addBtn {
+        background: linear-gradient(90deg, #038400, #00ff21);
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 10px;
+        height: 2em;
+        width: 6em;
+    }
+
+    #removeBtn {
+        background: linear-gradient(90deg, #b50101, #ff0000);
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 10px;
+        height: 2em;
+        width: 7em;
+    }
+    #sortBtn{
+        background: linear-gradient(90deg, #b59101, #fff200);
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 10px;
+        height:2em;
+        width: 6em;
+    }
+
+    #add-form {
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px;
+        padding: 2px;
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: 7px;
+        width: 8em;
+    }
+
+    #remove-form {
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px;
+        padding: 2px;
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: 7px;
+        width: 7em;
+    }
+
+    #assignments-div {
+        width: 18em;
+        margin: 8px;
+        padding: 3px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        font-size: 10px;
+    }
+
+    #priority-div {
+        width: 11em;
+        margin: 8px;
+        padding: 3px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        font-size: 10px;
+    }
+    .listFont{
+        font-size: 10px;
+    }
+
 }

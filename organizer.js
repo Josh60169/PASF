@@ -37,7 +37,6 @@ async function fetchProfile(){
             idAssigner = (userProfile.task.length + 1);
             console.log(idAssigner);
         }
-        tasks=sort(tasks);
         updateDisplay();
     }
 }
@@ -60,6 +59,13 @@ const removeBtnClicked = () => {
     else
         form.style.display = 'none';
 };
+const sortBtnClicked = () => {
+    let form = document.getElementById("sort-form");
+    if (form.style.display === 'none')
+        form.style.display = 'inline';
+    else
+        form.style.display = 'none';
+};
 document.getElementById("add-form").addEventListener('submit', (event) => {
     event.preventDefault();
     document.getElementById('add-form').style.display = 'none';
@@ -70,7 +76,6 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     let dueDay = parseInt(document.getElementById('org-date-day').value);
     tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
     idAssigner++;
-    tasks=sort(tasks);
     updateSupabaseArrays();
     // re-render the display
     updateDisplay();
@@ -93,16 +98,13 @@ const updateDisplay = () => {
     // re-renders assignment list
     for (let i = 0; i < tasks.length; i++) {
         let newAssignment = document.createElement('li');
-        if(tasks[i][2]>0||tasks[i][3]>0)
-            newAssignment.innerText = `${tasks[i][0]}   \nno Due Date`;
-        else
         newAssignment.innerText = `${tasks[i][0]}   \nDue Date: ${tasks[i][2]}/${tasks[i][3]}`;
         assignmentsDisplay.appendChild(newAssignment);
     }
     // re-renders priority list
     for (let j = 0; j < tasks.length; j++) {
         let newId = document.createElement('li');
-        newId.innerText = `${tasks[j][4]} \n\n`;
+        newId.innerText = `index:${tasks[j][4]} \npriority:${tasks[j][1]} \n`;
         priorityDisplay.appendChild(newId);
     }
 };
@@ -117,24 +119,25 @@ const removeTask = (id) => {
     updateSupabaseArrays();
 };
 
-const updateSupabaseArrays = async () =>{
+const updateSupabaseArrays = async () => {
     const userProfile = await getUserProfile(sessions);
     console.log(userProfile);
-    if (userProfile){
+    if (userProfile) {
         const userUUID = userProfile[0].id;
-        const { error } =
+        const {error} =
             await supabase.from('table1').update({
-                task:tasks,
+                task: tasks,
             }).eq('id', userUUID);
-        if (error){
-            console.log("orginizer.js: Error updating data: ",error.message);
+        if (error) {
+            console.log("orginizer.js: Error updating data: ", error.message);
         }
     } else {
         console.log('orginizer.js: Custom error: userProfile not found');
     }
 }
-function sort(arr){
-    arr = arr.sort((a, b) => b[1]-a[1]);
+function sort(arr ,index){
+    //index 1=priority 2=month 3=day
+    arr = arr.sort((a, b) => b[index]-a[index]);
     for (let i = 0; i < tasks.length; i++) {
         tasks[i][4] = i + 1;
         //console.log('hi')
@@ -142,3 +145,13 @@ function sort(arr){
     }
     return arr;
 }
+document.getElementById("sortByPriority").addEventListener('click', (event) => {
+    tasks=sort(sort(sort(tasks, 3), 2), 1);
+    updateSupabaseArrays();
+    updateDisplay();
+})
+document.getElementById("sortByDueDate").addEventListener('click', (event) => {
+    tasks=sort(sort(sort(tasks, 1), 3), 2);
+    updateSupabaseArrays();
+    updateDisplay();
+})
