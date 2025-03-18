@@ -135,23 +135,21 @@ const updateSupabaseArrays = async () => {
         console.log('orginizer.js: Custom error: userProfile not found');
     }
 }
-function sort(arr ,index){
+async function arrSort(arr, index) {
     //index 1=priority 2=month 3=day
-    arr = arr.sort((a, b) => b[index]-a[index]);
+    arr = await arr.sort((a, b) => b[index] - a[index]);
     for (let i = 0; i < tasks.length; i++) {
         tasks[i][4] = i + 1;
-        //console.log('hi')
-        console.log(tasks[i][4]);
     }
     return arr;
 }
-document.getElementById("sortByPriority").addEventListener('click', (event) => {
-    tasks=sort(sort(sort(tasks, 3), 2), 1);
-    updateSupabaseArrays();
+document.getElementById("sortByPriority").addEventListener('click', async (event) => {
+    tasks = arrSort(arrSort(arrSort(tasks, 3), 2), 1);
+    await updateSupabaseArrays();
     updateDisplay();
 })
-document.getElementById("sortByDueDate").addEventListener('click', (event) => {
-    tasks=sort(sort(sort(tasks, 1), 3), 2);
-    updateSupabaseArrays();
+document.getElementById("sortByDueDate").addEventListener('click', async (event) => {
+    tasks = arrSort( arrSort( arrSort(tasks, 1), 3), 2);
+    await updateSupabaseArrays();
     updateDisplay();
 })

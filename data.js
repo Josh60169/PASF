@@ -37,7 +37,7 @@ async function fetchProfile(){
         document.getElementById("change-first-name").value=userProfile.firstname;
         document.getElementById("change-last-name").value=userProfile.lastname;
         document.getElementById("change-city").value=userProfile.city;
-
+        document.getElementById("email").textContent=userProfile.email;
     }
 }
 

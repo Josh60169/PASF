@@ -5,14 +5,6 @@ let startBtn =  document.getElementById("start-btn");
 let stopBtn =  document.getElementById("stop-btn");
 stopBtn.disabled = true;
 
-const customBtnClick = () => {
-    if(document.getElementById("customInputBox").style.visibility != "visible") {
-        document.getElementById("customInputBox").style.visibility = "visible";
-    }else{
-        document.getElementById("customInputBox").style.visibility = "hidden";
-    }
-};
-
 // Implements the customized settings given from the user
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -35,8 +27,8 @@ const startTimer = () => {
     alarmFlag = false;
 
     if (timerMethod === "standard") {
-            countDownID = setInterval(countDownTimer, 1000)
-            stopTimerID = setInterval(stopTimer, 100);
+        countDownID = setInterval(countDownTimer, 1000)
+        stopTimerID = setInterval(stopTimer, 100);
     }
 };
 
@@ -74,14 +66,14 @@ const setTimer = (hrs, mins, secs) => {
     else if (hrs < 10)
         newHrs = `0${hrs}`;
     else
-       newHrs = `${hrs}`;
+        newHrs = `${hrs}`;
 
     if (mins === 0)
         newMins = '00';
     else if (mins < 10)
         newMins = `0${mins}`;
     else
-       newMins = `${mins}`;
+        newMins = `${mins}`;
 
     if (secs === 0)
         newSecs = '00';
