@@ -1,5 +1,5 @@
 .calcBox {
-    max-width: 400px;
+    width: 350px;
     margin: 10px;
     padding: 10px;
     background: radial-gradient(#5a5a5a, #424242);
@@ -18,45 +18,30 @@
 #bottomScroll{
     height: 30em;
 }
+
+.txtbox{
+    width: 200px;
+}
 @media  (max-width: 600px) {
-    #grade_percent {
-        width: 9em;
-    }
-    #current-grade {
-        width: 9em;
-    }
+
     #current_grade_p {
-        font-size: 8px;
+        font-size: 12px;
     }
     #grade_percent_p {
-        font-size: 8px;
+        font-size: 12px;
     }
 
-
+    .txtbox{
+        width: 100px
+    }
 
     .calcBox {
-        max-width: 200px;
-        margin: 8px;
-        padding: 8px;
+        width: 175px;
+        margin: 6px;
+        padding: 6px;
         background: radial-gradient(#5a5a5a, #424242);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        border-radius: 25px;
+        border-radius: 20px;
         text-align: center;
-    }
-
-    #A_curve {
-        width: 75px;
-    }
-    #B_curve {
-        width: 75px;
-    }
-    #C_curve {
-        width: 75px;
-    }
-    #D_curve {
-        width: 75px;
-    }
-    #F_curve {
-        width: 75px;
     }
 }

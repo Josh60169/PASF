@@ -23,40 +23,11 @@ button {
     margin: 5px;
 }
 
-#add-form {
-    background: radial-gradient(#5a5a5a, #424242);
-    box-shadow: 0 0 10px;
-    padding: 10px;
-    margin-left: 0;
-    margin-top: 0;
-    border-radius: 15px;
-    width: 400px;
-    height: 400px;
-}
-#sort-form {
-    background: radial-gradient(#5a5a5a, #424242);
-    box-shadow: 0 0 10px;
-    padding: 10px;
-    margin-left: 0;
-    margin-top: 0;
-    border-radius: 15px;
-    width: 400px;
-    height: 400px;
-}
+
 .dueDateTxtBox {
     width: 4em;
 }
 
-#remove-form {
-    background: radial-gradient(#5a5a5a, #424242);
-    box-shadow: 0 0 10px;
-    padding: 10px;
-    margin-left: 0;
-    margin-top: 0;
-    border-radius: 15px;
-    width: 400px;
-    height: 400px;
-}
 #addBtn{
     background: linear-gradient(90deg, #038400, #00ff21);
     border: none;
@@ -84,6 +55,7 @@ button {
     height:2em;
     width: 8em;
 }
+
 #bottomScroll{
     height: 40em;
 }
@@ -141,24 +113,6 @@ button {
         width: 7em;
     }
 
-    #add-form {
-        background: radial-gradient(#5a5a5a, #424242);
-        box-shadow: 0 0 10px;
-        padding: 2px;
-        margin-left: 0;
-        margin-top: 0;
-        border-radius: 7px;
-        width: 8em;
-    }
-    #remove-form {
-        background: radial-gradient(#5a5a5a, #424242);
-        box-shadow: 0 0 10px;
-        padding: 2px;
-        margin-left: 0;
-        margin-top: 0;
-        border-radius: 7px;
-        width: 8em;
-    }
 }
 
 @media (max-width: 600px) {
@@ -189,26 +143,6 @@ button {
         font-size: 10px;
         height:2em;
         width: 6em;
-    }
-
-    #add-form {
-        background: radial-gradient(#5a5a5a, #424242);
-        box-shadow: 0 0 10px;
-        padding: 2px;
-        margin-left: 0;
-        margin-top: 0;
-        border-radius: 7px;
-        width: 8em;
-    }
-
-    #remove-form {
-        background: radial-gradient(#5a5a5a, #424242);
-        box-shadow: 0 0 10px;
-        padding: 2px;
-        margin-left: 0;
-        margin-top: 0;
-        border-radius: 7px;
-        width: 7em;
     }
 
     #assignments-div {

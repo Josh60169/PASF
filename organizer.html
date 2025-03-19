@@ -49,65 +49,61 @@
             </nav>
         </div>
 
+
+
         <div class="container-fluid">
-        
-            <div class="horizontalList">
+            <div class="horizontalList"><!--task list-->
                 <h3 class="col-sm-3 text-center boldRobotoF lightBlue" id="task_txt">TASK</h3>
-    
+
                 <div id="assignments-div" class="col-sm-3">
                     <ul class="regularOrbitron white listFont" id="assignments-list" ></ul>
                 </div>
             </div>
     
-            <div class="horizontalList">
+            <div class="horizontalList"><!--Priority and index list-->
                 <h3 class="col-sm-3 text-center boldRobotoF lightBlue" id="priority_txt">PRIORITY</h3>
     
                 <div id="priority-div" class="col-sm-3">
                     <ul class="regularOrbitron white listFont" id="priority-list" ></ul>
                 </div>
             </div>
-        
-            <!--<div class="row">
-                    <h3 class="col-sm-3 text-center boldRobotoF lightBlue" id="task_txt">TASK</h3>
-                    <h3 class="col-sm-3 text-center boldRobotoF lightBlue" id="priority_txt"">PRIORITY</h3>
-                <div class="row">
-                    <div id="assignments-div" class="col-sm-3">
-                        <ul class="regularOrbitron white" id="assignments-list" ></ul>
-                    </div>
-
-                    <div id="priority-div" class="col-sm-3">
-                        <ul class="regularOrbitron white" id="priority-list"></ul>
-                    </div>-->
 
             <div class="horizontalList">
-                <div class="VerticalList">
+                <div class="VerticalList"><!--Buttons-->
                     <button class="col-sm-2 boldRobotoF horizontalList" id="addBtn" onclick="addBtnClicked()">ADD +</button>
                     <button class="col-sm-2 boldRobotoF horizontalList" id="removeBtn" onclick="removeBtnClicked()">REMOVE -</button>
                     <button class="col-sm-2 boldRobotoF horizontalList" id="sortBtn" onclick="sortBtnClicked()">SORT</button>
                 </div>
-                <div class="VerticalList">
+
+                <div class="VerticalList"><!--forms-->
                     <form style="display: none" id="add-form" class="col-sm-3">
-                        <label for="org-name-txtbox" class="boldRobotoF white">Name: </label><input type="text" id="org-name-txtbox"><br>
-                        <label for="org-importance-slider" class="boldRobotoF white">Importance: </label><input type="range" min="1" max="100" value="50" id="org-importance-slider">
-                        <div class="row">
-                            <label for="org-date-month" class="col-sm-3 boldRobotoF white">Month: <input type="number" id="org-date-month" class="dueDateTxtBox"></label>
-                            <label for="org-date-day" class="col-sm-3 boldRobotoF white">Day: <input type="number" id="org-date-day" class="dueDateTxtBox"></label>
+                        <div class="container">
+                            <label for="org-name-txtbox" class="boldRobotoF white">Name: </label><input type="text" id="org-name-txtbox"><br>
+                            <label for="org-importance-slider" class="boldRobotoF white">Importance: </label><input type="range" min="1" max="100" value="50" id="org-importance-slider">
+                            <div class="row">
+                                <label for="org-date-month" class="col-sm-3 boldRobotoF white">Month: <input type="number" id="org-date-month" class="dueDateTxtBox"></label>
+                                <label for="org-date-day" class="col-sm-3 boldRobotoF white">Day: <input type="number" id="org-date-day" class="dueDateTxtBox"></label>
+                            </div>
+                            <input type="submit">
                         </div>
-                        <input type="submit">
                     </form>
+
                     <form style="display: none" id="remove-form" class="col-sm-3">
-                        <div>
+                        <div class="container">
                             <label for="org-remove-txtbox" class="boldRobotoF white">Remove by index: </label><input type="number" id="org-remove-txtbox">
                             <input type="submit">
                         </div>
                     </form>
+
                     <form style="display: none" id="sort-form" class="col-sm-3">
-                        <div>
-                            <button id="sortByPriority" class="boldRobotoF">Sort by Priority</button>
-                            <button id="sortByDueDate" class="boldRobotoF">Sort by Due Date</button>
+                        <div class="container">
+                            <p class="VerticalList white boldRobotoF">Sort by:</p>
+                            <button id="sortByPriority" class="boldRobotoF horizontalList">Priority</button>
+                            <button id="sortByDueDate" class="boldRobotoF horizontalList">Due Date</button>
                         </div>
                     </form>
                 </div>
+
             </div>
             <div id="bottomScroll"></div>
         </div>        
