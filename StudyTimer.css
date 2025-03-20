@@ -36,12 +36,16 @@ body {
 }
 
 @media (max-width: 600px) {
-    button{
+    button {
         display: block;
-        margin: 10px auto;
-        padding: 6px;
         width: 100%;
     }
+
+    #btn-div {
+        margin: 10px;
+        padding: 10px;
+    }
+
     #left{
         display: inline-block;
         margin: 1px auto;
@@ -54,13 +58,16 @@ body {
     }
 
     #customInputBox {
+        display: inline;
         float: right;
         background: radial-gradient(#5a5a5a, #424242);
         box-shadow: 0 0 10px;
         visibility: hidden;
         border-radius: 15px;
-        margin: 10px
+        margin: 10px;
+        position: absolute;
     }
+    
     #timerWarning{
         font-size: 20px;
     }
@@ -69,7 +76,7 @@ body {
     }
 
     #text {
-        margin-top: 10px;
+        margin-top: 1px;
         padding: 10px;
     }
 }
