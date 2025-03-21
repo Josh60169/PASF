@@ -81,6 +81,7 @@ nav {
     background: radial-gradient(#5a5a5a, #424242);
     overflow: hidden;
     width: 100%;
+    z-index: 1;
 }
 .nav-element {
     float: left;
