@@ -33,10 +33,11 @@ async function fetchProfile(){
         console.log('User profile: ', userProfile);
         //fetch user data and save to the tasks array
         if (userProfile.task != null) {
-        tasks = (userProfile.task);
-        idAssigner = (userProfile.task.length + 1);
-        console.log(idAssigner);
-        }updateDisplay();
+            tasks = (userProfile.task);
+            idAssigner = (userProfile.task.length + 1);
+            console.log(idAssigner);
+        }
+        updateDisplay();
     }
 }
 fetchProfile().catch((error) => {
@@ -53,6 +54,13 @@ const addBtnClicked = () => {
 // opens and closes the form if the buttons are clicked
 const removeBtnClicked = () => {
     let form = document.getElementById("remove-form");
+    if (form.style.display === 'none')
+        form.style.display = 'inline';
+    else
+        form.style.display = 'none';
+};
+const sortBtnClicked = () => {
+    let form = document.getElementById("sort-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
     else
@@ -96,7 +104,7 @@ const updateDisplay = () => {
     // re-renders priority list
     for (let j = 0; j < tasks.length; j++) {
         let newId = document.createElement('li');
-        newId.innerText = `Id: ${tasks[j][4]} \n\n`;
+        newId.innerText = `index:${tasks[j][4]} \npriority:${tasks[j][1]} \n`;
         priorityDisplay.appendChild(newId);
     }
 };
@@ -110,19 +118,42 @@ const removeTask = (id) => {
     idAssigner--
     updateSupabaseArrays();
 };
-const updateSupabaseArrays = async () =>{
+
+const updateSupabaseArrays = async () => {
     const userProfile = await getUserProfile(sessions);
     console.log(userProfile);
-    if (userProfile){
+    if (userProfile) {
         const userUUID = userProfile[0].id;
-        const { error } =
+        const {error} =
             await supabase.from('table1').update({
-                task:tasks,
+                task: tasks,
             }).eq('id', userUUID);
-        if (error){
-            console.log("orginizer.js: Error updating data: ",error.message);
+        if (error) {
+            console.log("orginizer.js: Error updating data: ", error.message);
         }
     } else {
         console.log('orginizer.js: Custom error: userProfile not found');
     }
 }
+function arrSort(arr, index) {
+    //index 1=priority 2=month 3=day
+    if (index === 1 || index === 2)
+        arr = arr.sort((b, a) => b[index] - a[index]);
+    else 
+        arr = arr.sort((a, b) => b[index] - a[index]);
+
+    for (let i = 0; i < tasks.length; i++) {
+        tasks[i][4] = i + 1;
+    }
+    return arr;
+}
+document.getElementById("sortByPriority").addEventListener('click', (event) => {
+    tasks = arrSort(arrSort(arrSort(tasks, 3), 2), 1);
+    updateSupabaseArrays();
+    updateDisplay();
+})
+document.getElementById("sortByDueDate").addEventListener('click', (event) => {
+    tasks = arrSort( arrSort( arrSort(tasks, 1), 3), 2);
+    updateSupabaseArrays();
+    updateDisplay();
+})

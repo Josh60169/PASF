@@ -14,6 +14,37 @@
 <body>
 <h2 class="text-center headerOrbitron" style="margin-top: 50px" id="main-menu-header">STUDY TIMER</h2>
 <hr id="hr-line"><br>
+    <div id="nav-div">
+        <nav>
+            <ul>
+                <li class="nav-element">
+                    <a href="organizer.html">
+                        <img src="assets/clipboard.png" alt="Organizer" id="clipboard">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="studyTimer.html">
+                        <img src="assets/timer.png" alt="Study Timer" id="study-timer">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="finalExamCalculator.html">
+                        <img src="assets/Final%20calculator.png" alt="Final Exam Calculator" id="final-calc">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="account.html">
+                        <img src="assets/person.png" alt="Account" id="account">
+                    </a>
+                </li>
+                <li class="nav-element">
+                    <a href="mainMenu.html">
+                        <img src="assets/pasf.png" alt="logo" id="logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 <div class="text-center">
     <div id="left">
         <div class="container" id="label-timer">
@@ -23,7 +54,7 @@
             <h3 id="timer-time" class="regularOrbitron white">00:00:00</h3>
         </div>
         <div id="timer-btns" class="container-fluid">
-            <div class="row">
+            <div class="row" id="btn-div">
                 <button id="start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info">Start</button>
                 <button id="stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info">Stop</button>
             </div>
@@ -31,8 +62,8 @@
         <div class="container" id="text">
             <h3 class="regularRobotoF cyan">The study timer helps you stay focused on your work. Just select a how long you want to work for or make a custom timer if you don’t see what you want.</h3>
         </div>
-
     </div>
+
     <div id="right">
         <div class="container" id="label-presets">
             <h3 class="boldRobotoF white">Presets</h3>
@@ -70,44 +101,6 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div id="nav-div">
-        <nav>
-            <ul>
-                <li class="nav-element">
-                    <a href="organizer.html">
-                        <img src="assets/clipboard.png" alt="Organizer" id="clipboard">
-                    </a>
-                </li>
-                <li class="nav-element">
-                    <a href="studyTimer.html">
-                        <img src="assets/timer.png" alt="Study Timer" id="study-timer">
-                    </a>
-                </li>
-                <li class="nav-element">
-                    <a href="finalExamCalculator.html">
-                        <img src="assets/Final%20calculator.png" alt="Final Exam Calculator" id="final-calc">
-                    </a>
-                </li>
-                <li class="nav-element">
-                    <a href="account.html">
-                        <img src="assets/person.png" alt="Account" id="account">
-                    </a>
-                </li>
-                <li class="nav-element">
-                    <a href="mainMenu.html">
-                        <img src="assets/pasf.png" alt="logo" id="logo">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
-    <!--<div class="container-fluid">
-        <div id="box">
-            <p id="about">Description about studyTimer</p>
-        </div>
-    </div>-->
-</div>
 </body>
 </html>

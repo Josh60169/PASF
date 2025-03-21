@@ -5,6 +5,11 @@ button{
     padding: 5px;
     width: 100%;
 }
+
+body {
+    margin-bottom: 200px;
+}
+
 #left{
     display: inline-block;
     margin: 1px auto;
@@ -28,4 +33,50 @@ button{
 }
 #timer-btns{
     height: 25px;
+}
+
+@media (max-width: 600px) {
+    #start-btn {
+        display: block;
+        width: 50%;
+    }
+
+    #stop-btn {
+        display: block;
+        width: 50%;
+    }
+
+    #btn-div {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    #left{
+        display: inline-block;
+        margin: 1px auto;
+        padding: 2px;
+    }
+    #right{
+        display: inline-block;
+        margin: 1px auto;
+        padding: 2px;
+    }
+
+    #customInputBox {
+        display: inline;
+        float: right;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px;
+        visibility: hidden;
+        border-radius: 15px;
+        margin: 10px;
+        position: absolute;
+    }
+    
+    #timerWarning{
+        font-size: 20px;
+    }
+    #timer-btns{
+        height: 25px;
+    }
 }
