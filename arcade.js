@@ -1,16 +1,26 @@
 let timer = document.getElementById("timer-time");
 let timerMethod="standard";
 let alarmSound;
-let startBtn =  document.getElementById("start-btn");
-let stopBtn =  document.getElementById("stop-btn");
+let startBtn = document.getElementById("arcade-start-btn");
+let stopBtn = document.getElementById("arcade-stop-btn");
 stopBtn.disabled = true;
 
-// Implements the customized settings given from the user
-document.querySelector("form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    //timerMethod = document.querySelector('input[name="radAns"]:checked').id;
+let timeAmount = 0; // Amount of time on timer in minutes
 
-    setTimer(document.querySelector('input[name="cust-hrs"]').value, document.querySelector('input[name="cust-mins"]').value, document.querySelector('input[name="cust-secs"]').value);
+// Adds 1 minute if add 1 minute button is clicked
+document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    timeAmount++;
+    setTimer(0, timeAmount, 0);
+});
+
+// clears timer if clear button is clicked
+document.querySelector("#arcade-clear-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    timeAmount = 0;
+    setTimer(0, timeAmount, 0);
 });
 
 // Variables for managing the timer

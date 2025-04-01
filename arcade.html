@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <title>PASF ► Arcade</title>
     <link rel="stylesheet" href="style.css">
+    <script src="arcade.js" defer></script>
 </head>
 <h2 class="text-center headerOrbitron" style="margin-top: 50px" id="main-menu-header">ARCADE</h2>
 <hr id="hr-line"><br>
@@ -42,31 +43,70 @@
         </ul>
     </nav>
 </div>
-
+<div id="arcade-selectGame">
     <div class="horizontalList">
-        <div class="container horizontalList">
-            <h2 class="regularRobotoF cyan">Breaks are important to keep your focus and reduce stress levels. Below, we have attached a few games for your enjoyment.</h2>
+        <div class="VerticalList container" id="infoBox">
+            <h2 class="cyan regularRobotoF">Breaks are important to keep your focus and reduce stress levels. Below, we have attached a few games for your enjoyment.</h2>
         </div>
-        <div class="container horizontalList">
+        <div class="VerticalList container" id="selectGameBox">
+
             <div>
+                <img src="/PASF-main/assets/policegamelogo.png" style="border-radius: 20px;">
                 <div class="horizontalList">
-                    <div class="horizontalList">
-                        <button id="policeGame">Play</button>
+                    <h2 class="regularRobotoF white VerticalList">Police Game</h2>
+                    <div class="VerticalList">
+                        <h2 class="regularRobotoF white horizontalList">By: Anthony</h2>
+                        <button id="arcadeStart-policeGame" class="regularRobotoF white horizontalList">Play</button>
                     </div>
                 </div>
             </div>
+            
             <div>
+                <img src="/PASF-main/assets/zombiedefenselogo.png" style="border-radius: 20px;">
                 <div class="horizontalList">
-                    <div class="horizontalList">
-                        <button id="ZombieDefense">Play</button>
+                    <h2 class="regularRobotoF white VerticalList">Zombie Defence</h2>
+                    <div class="VerticalList">
+                        <h2 class="regularRobotoF white horizontalList">By: Anthony</h2>
+                        <button id="arcadeStart-zombieDefence" class="regularRobotoF white horizontalList">Play</button>
                     </div>
                 </div>
             </div>
+            
         </div>
 
     </div>
     <div class="horizontalList">
-
+        <div class="VerticalList container" id="timer">
+            <div class="container" id="label-timer">
+                <h3 class="boldRobotoF white">Timer</h3>
+            </div>
+            <div class="container" id="time">
+                <h3 id="timer-time" class="regularOrbitron white">00:00:00</h3>
+            </div>
+            <div id="timer-btns" class="container-fluid">
+                <div class="row" id="btn-div">
+                    <button id="arcade-start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info">Start</button>
+                    <button id="arcade-stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info">Stop</button>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row" id="btn-div">
+                    <button id="arcade-addMin-btn">Add one minuete</button>
+                    <button id="arcade-clear-btn">Clear the timer</button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<div class="container" style="display: none;" id="PoliceGame">
+    <iframe width="500" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&show_file_tree=true" frameborder="0" allowfullscreen class="video-iframe"></iframe>
+    <button id="arcade-backFrom-PoliceGame">Close</button>
+</div>
+<div class="container" style="display: none;" id="ZombieDefense">
+    <iframe width="500" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&show_file_tree=true" frameborder="0" allowfullscreen class="video-iframe"></iframe>
+    <button id="arcade-backFrom-ZombieDefense">Close</button>
+</div>
+
 </body>
 </html>
