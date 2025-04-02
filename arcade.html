@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="arcade.css">
     <title>PASF ► Arcade</title>
     <link rel="stylesheet" href="style.css">
     <script src="arcade.js" defer></script>
@@ -51,23 +52,23 @@
         <div class="VerticalList container" id="selectGameBox">
 
             <div>
-                <img src="/PASF-main/assets/policegamelogo.png" style="border-radius: 20px;">
+                <img src="assets/policegamelogo.png" style="border-radius: 25px; width: 50px; height: 50px;">
                 <div class="horizontalList">
-                    <h2 class="regularRobotoF white VerticalList">Police Game</h2>
-                    <div class="VerticalList">
+                    <h2 class="regularRobotoF white VerticalList" style="margin: 0;">Police Game</h2>
+                    <div class="VerticalList" style="margin: 0;">
                         <h2 class="regularRobotoF white horizontalList">By: Anthony</h2>
-                        <button id="arcadeStart-policeGame" class="regularRobotoF white horizontalList">Play</button>
+                        <button id="arcadeStart-policeGame" class="regularRobotoF horizontalList">Play</button>
                     </div>
                 </div>
             </div>
             
             <div>
-                <img src="/PASF-main/assets/zombiedefenselogo.png" style="border-radius: 20px;">
+                <img src="assets/zombiedefenselogo.png" style="border-radius: 25px; width: 50px; height: 50px;">
                 <div class="horizontalList">
-                    <h2 class="regularRobotoF white VerticalList">Zombie Defence</h2>
-                    <div class="VerticalList">
+                    <h2 class="regularRobotoF white VerticalList" style="margin: 0;">Zombie Defense</h2>
+                    <div class="VerticalList" style="margin: 0;">
                         <h2 class="regularRobotoF white horizontalList">By: Anthony</h2>
-                        <button id="arcadeStart-zombieDefence" class="regularRobotoF white horizontalList">Play</button>
+                        <button id="arcadeStart-zombieDefense" class="regularRobotoF horizontalList">Play</button>
                     </div>
                 </div>
             </div>
@@ -90,7 +91,7 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="row" id="btn-div">
+                <div class="row" id="timerChange-btn-div">
                     <button id="arcade-addMin-btn">Add one minuete</button>
                     <button id="arcade-clear-btn">Clear the timer</button>
                 </div>
@@ -99,14 +100,14 @@
     </div>
 </div>
 
-<div class="container" style="display: none;" id="PoliceGame">
-    <iframe width="500" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&show_file_tree=true" frameborder="0" allowfullscreen class="video-iframe"></iframe>
-    <button id="arcade-backFrom-PoliceGame">Close</button>
+<div style="display: none;" id="policeGame">
+    <button id="arcade-backFrom-PoliceGame" class="VerticalList closeBtn white" >Close</button>
+    <iframe width="850" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&read_only=True&show_file_tree=False" frameborder="0" allowfullscreen class="video-iframe VerticalList"></iframe>
 </div>
-<div class="container" style="display: none;" id="ZombieDefense">
-    <iframe width="500" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&show_file_tree=true" frameborder="0" allowfullscreen class="video-iframe"></iframe>
-    <button id="arcade-backFrom-ZombieDefense">Close</button>
+<div style="display: none;" id="zombieDefense">
+    <button id="arcade-backFrom-ZombieDefense" class="VerticalList closeBtn white">Close</button>
+    <iframe width="850" height="850" src="https://codehs.com/sandbox/id/zombie-defense-B8fLVP/embed/?display_mode=displayOnly&read_only=True&show_file_tree=False" frameborder="0" allowfullscreen class="video-iframe VerticalList"></iframe>
 </div>
-
+<div id="bottomScroll"></div>
 </body>
 </html>

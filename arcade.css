@@ -1,0 +1,19 @@
+#policeGame {
+    text-align: center;
+}
+
+#zombieDefense {
+    text-align: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+#bottomScroll{
+    height: 3em;
+}
+.closeBtn{
+    width: 4em; 
+    height: 2em;
+}

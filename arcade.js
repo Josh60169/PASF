@@ -121,3 +121,33 @@ const timerAlarm = () => {
     alarmSound.loop = true;
     alarmSound.play();
 };
+
+//play buttons
+const arcadeStart_zombieDefense = document.getElementById("arcadeStart-zombieDefense");
+arcadeStart_zombieDefense.addEventListener('click', () => {
+    document.getElementById("arcade-selectGame").style.display = "none";
+    document.getElementById("zombieDefense").style.display = "block";
+    console.log("szd does this work????????");
+});
+
+const arcadeStart_policeGame = document.getElementById("arcadeStart-policeGame");
+arcadeStart_policeGame.addEventListener('click', () => {
+    document.getElementById("arcade-selectGame").style.display = "none";
+    document.getElementById("policeGame").style.display = "block";
+    console.log("spg does this work????????");
+});
+
+//close buttons
+const arcadeBack_policeGame = document.getElementById("arcade-backFrom-PoliceGame");
+arcadeBack_policeGame.addEventListener('click', () => {
+    document.getElementById("arcade-selectGame").style.display = "inline";
+    document.getElementById("policeGame").style.display = "none";
+    console.log("cpg does this work????????");
+});
+
+const arcadeBack_zombieDefense = document.getElementById("arcade-backFrom-ZombieDefense");
+arcadeBack_zombieDefense.addEventListener('click', () => {
+    document.getElementById("arcade-selectGame").style.display = "inline";
+    document.getElementById("zombieDefense").style.display = "none";
+    console.log("czd does this work????????");
+});
