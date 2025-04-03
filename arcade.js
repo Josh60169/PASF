@@ -140,14 +140,14 @@ arcadeStart_policeGame.addEventListener('click', () => {
 //close buttons
 const arcadeBack_policeGame = document.getElementById("arcade-backFrom-PoliceGame");
 arcadeBack_policeGame.addEventListener('click', () => {
-    document.getElementById("arcade-selectGame").style.display = "inline";
+    document.getElementById("arcade-selectGame").style.display = "block";
     document.getElementById("policeGame").style.display = "none";
     console.log("cpg does this work????????");
 });
 
 const arcadeBack_zombieDefense = document.getElementById("arcade-backFrom-ZombieDefense");
 arcadeBack_zombieDefense.addEventListener('click', () => {
-    document.getElementById("arcade-selectGame").style.display = "inline";
+    document.getElementById("arcade-selectGame").style.display = "block";
     document.getElementById("zombieDefense").style.display = "none";
     console.log("czd does this work????????");
 });
