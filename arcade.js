@@ -126,14 +126,14 @@ const timerAlarm = () => {
 const arcadeStart_zombieDefense = document.getElementById("arcadeStart-zombieDefense");
 arcadeStart_zombieDefense.addEventListener('click', () => {
     document.getElementById("arcade-selectGame").style.display = "none";
-    document.getElementById("zombieDefense").style.display = "block";
+    document.getElementById("zombieDefense").style.display = "flex";
     console.log("szd does this work????????");
 });
 
 const arcadeStart_policeGame = document.getElementById("arcadeStart-policeGame");
 arcadeStart_policeGame.addEventListener('click', () => {
     document.getElementById("arcade-selectGame").style.display = "none";
-    document.getElementById("policeGame").style.display = "block";
+    document.getElementById("policeGame").style.display = "flex";
     console.log("spg does this work????????");
 });
 
