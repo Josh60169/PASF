@@ -137,7 +137,7 @@ const updateSupabaseArrays = async () => {
 }
 function arrSort(arr, index) {
     //index 1=priority 2=month 3=day
-    if (index === 1 || index === 2)
+    if (index === 2 || index === 3)
         arr = arr.sort((b, a) => b[index] - a[index]);
     else 
         arr = arr.sort((a, b) => b[index] - a[index]);
