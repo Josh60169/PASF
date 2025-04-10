@@ -45,6 +45,8 @@ fetchProfile().catch((error) => {
 })
 // opens and closes the form if the buttons are clicked
 const addBtnClicked = () => {
+    document.getElementById("sort-form").style.display= 'none';
+    document.getElementById("remove-form").style.display= 'none';
     let form = document.getElementById("add-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
@@ -53,6 +55,8 @@ const addBtnClicked = () => {
 };
 // opens and closes the form if the buttons are clicked
 const removeBtnClicked = () => {
+    document.getElementById("add-form").style.display= 'none';
+    document.getElementById("sort-form").style.display= 'none';
     let form = document.getElementById("remove-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
@@ -60,12 +64,15 @@ const removeBtnClicked = () => {
         form.style.display = 'none';
 };
 const sortBtnClicked = () => {
+    document.getElementById("add-form").style.display= 'none';
+    document.getElementById("remove-form").style.display= 'none';
     let form = document.getElementById("sort-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
     else
         form.style.display = 'none';
 };
+
 document.getElementById("add-form").addEventListener('submit', (event) => {
     event.preventDefault();
     document.getElementById('add-form').style.display = 'none';
@@ -74,21 +81,23 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     let taskImportance = document.getElementById('org-importance-slider').value;
     let dueMonth = parseInt(document.getElementById('org-date-month').value);
     let dueDay = parseInt(document.getElementById('org-date-day').value);
-    tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
-    idAssigner++;
+    if(dueMonth>0&&dueMonth<12&&dueDay>0&&dueDay<31){
+        tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
+        idAssigner++;
+    }
     updateSupabaseArrays();
     // re-render the display
     updateDisplay();
 });
-
 document.getElementById("remove-form").addEventListener('submit', (event) => {
     event.preventDefault();
-    //document.getElementById('add-form').style.display = 'none';
     let idToRemove = document.getElementById("org-remove-txtbox").value;
     removeTask(idToRemove);
     document.getElementById("remove-form").style.display = 'none';
     updateDisplay();
 });
+
+
 const updateDisplay = () => {
     let assignmentsDisplay = document.getElementById('assignments-list');
     let priorityDisplay = document.getElementById('priority-list');

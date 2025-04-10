@@ -16,9 +16,12 @@ const customBtnClick = () => {
 // Implements the customized settings given from the user
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
-    //timerMethod = document.querySelector('input[name="radAns"]:checked').id;
+    const hrs = document.querySelector('input[name="cust-hrs"]').value, mins = document.querySelector('input[name="cust-mins"]').value, 
+    secs = document.querySelector('input[name="cust-secs"]').value;
 
-    setTimer(document.querySelector('input[name="cust-hrs"]').value, document.querySelector('input[name="cust-mins"]').value, document.querySelector('input[name="cust-secs"]').value);
+    if (hrs >= 0 && mins >= 0 && secs >= 0) {
+        setTimer(document.querySelector('input[name="cust-hrs"]').value, document.querySelector('input[name="cust-mins"]').value, document.querySelector('input[name="cust-secs"]').value);
+    }
 });
 
 // Variables for managing the timer
@@ -61,8 +64,14 @@ const setTimer = (hrs, mins, secs) => {
     // adjusts the hrs, mins, and secs to be in proper format (ex: not 90 secs but 1 min and 30 secs)
     if (Math.trunc(parseInt(mins) / 60) !== 0) {
         let addToHours = Math.trunc(parseInt(mins) / 60);
-        hrs = Math.trunc(parseInt(hrs) + addToHours);
-        mins = Math.trunc(parseInt(mins) % 60);
+        hrs = parseInt(hrs) + addToHours;
+        mins = parseInt(mins) % 60;
+    }
+
+    if (Math.trunc(parseInt(secs) / 60) !== 0) {
+        let addToMins = Math.trunc(parseInt(secs) / 60);
+        mins = parseInt(mins) + addToMins;
+        secs = parseInt(secs) % 60;
     }
 
     let newHrs = '';
