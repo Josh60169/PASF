@@ -47,6 +47,7 @@ fetchProfile().catch((error) => {
 const addBtnClicked = () => {
     document.getElementById("sort-form").style.display= 'none';
     document.getElementById("remove-form").style.display= 'none';
+    document.getElementById('error-msg').style.display= 'none';
     let form = document.getElementById("add-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
@@ -57,6 +58,7 @@ const addBtnClicked = () => {
 const removeBtnClicked = () => {
     document.getElementById("add-form").style.display= 'none';
     document.getElementById("sort-form").style.display= 'none';
+    document.getElementById('error-msg').style.display= 'none';
     let form = document.getElementById("remove-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
@@ -66,6 +68,7 @@ const removeBtnClicked = () => {
 const sortBtnClicked = () => {
     document.getElementById("add-form").style.display= 'none';
     document.getElementById("remove-form").style.display= 'none';
+    document.getElementById('error-msg').style.display= 'none';
     let form = document.getElementById("sort-form");
     if (form.style.display === 'none')
         form.style.display = 'inline';
@@ -84,6 +87,10 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     if(dueMonth>0&&dueMonth<12&&dueDay>0&&dueDay<31){
         tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
         idAssigner++;
+    }else {
+        console.log("Error: Invalid Date");
+        document.getElementById('error-msg').textContent="Error: Invalid Date";
+        document.getElementById('error-msg').style.display = 'block';
     }
     updateSupabaseArrays();
     // re-render the display
