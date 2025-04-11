@@ -75,7 +75,10 @@ const sortBtnClicked = () => {
     else
         form.style.display = 'none';
 };
+let taskImportance = document.getElementById('org-importance-slider').value;
+taskImportance.addEventListener('input', function (){
 
+})
 document.getElementById("add-form").addEventListener('submit', (event) => {
     event.preventDefault();
     document.getElementById('add-form').style.display = 'none';

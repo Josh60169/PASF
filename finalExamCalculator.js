@@ -4,7 +4,6 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
     const Bcurve= document.getElementById("B_curve").value;
     const Ccurve= document.getElementById("C_curve").value;
     const Dcurve= document.getElementById("D_curve").value;
-    const Fcurve= document.getElementById("F_curve").value;
     const gradePercent = document.getElementById("grade_percent").value/100;
     let currentGrade;
 
@@ -17,15 +16,13 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
             currentGrade=Ccurve;
     }else if(document.getElementById("current_grade").value=="d"||document.getElementById("current_grade").value=="D"){
             currentGrade=Dcurve;
-    }else if(document.getElementById("current_grade").value=="f"||document.getElementById("current_grade").value=="F"){
-            currentGrade=Fcurve;
     }else{
         currentGrade=document.getElementById("current_grade").value;
     }
 
     let willIsNotTaken=true
     //calculate A grade
-    let grade=(Acurve-currentGrade*(1-gradePercent))/gradePercent;
+    let grade=Math.round((Acurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
     if(grade<=105&&grade>=0){
         document.getElementById("A").textContent=" You need at least "+grade+"% on the Final to get a A.";
         //willIsNotTaken=false
@@ -36,8 +33,8 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
         document.getElementById("A").textContent="You can not get a A as your final grade";
 
     //calculate B grade
-    grade=(Bcurve-currentGrade*(1-gradePercent))/gradePercent;
-    if(grade<=105&&grade>=0){
+    grade=Math.round((Bcurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
+    if(grade<=100&&grade>=0){
         document.getElementById("B").textContent=" You need at least "+grade+"% on the Final to get a B.";
         //willIsNotTaken=false
     }else if(currentGrade>Bcurve && grade<0&&willIsNotTaken){
@@ -47,8 +44,8 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
         document.getElementById("B").textContent="You can not get a B as your final grade";
 
     //calculate C grade
-    grade=(Ccurve-currentGrade*(1-gradePercent))/gradePercent;
-    if(grade<=105&&grade>=0){
+    grade=Math.round((Ccurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
+    if(grade<=100&&grade>=0){
         document.getElementById("C").textContent=" You need at least "+grade+"% on the Final to get a C.";
         //willIsNotTaken=false
     }else if(currentGrade>Ccurve && grade<0&&willIsNotTaken){
@@ -58,8 +55,8 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
         document.getElementById("C").textContent="You can not get a C as your final grade";
 
     //calculate D grade
-    grade=(Dcurve-currentGrade*(1-gradePercent))/gradePercent;
-    if(grade<=105&&grade>=0){
+    grade=Math.round((Dcurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
+    if(grade<=100&&grade>=0){
         document.getElementById("D").textContent=" You need at least "+grade+"% on the Final to get a D.";
         //willIsNotTaken=false
     }else if(currentGrade>Dcurve && grade<0&&willIsNotTaken){
@@ -68,14 +65,4 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
     }else
         document.getElementById("D").textContent="You can not get a D as your final grade";
 
-    //calculate F grade
-    grade=(Fcurve-currentGrade*(1-gradePercent))/gradePercent;
-    if(grade<=105&&grade>=0){
-        document.getElementById("F").textContent=" You need at least "+grade+"% on the Final to get a F.";
-        //willIsNotTaken=false
-    }else if(currentGrade>Fcurve && grade<0&&willIsNotTaken){
-        document.getElementById("F").textContent="You will get at least a F as your final grade";
-        willIsNotTaken=false
-    }else
-        document.getElementById("F").textContent="You can not get a F as your final grade";
 });

@@ -92,23 +92,23 @@ nav {
     justify-content: center;
 }
 
-#clipboard{
+.clipboard{
     width: 38px;
     height: 50px;
 }
-#study-timer {
+.study-timer {
     width: 50px;
     height: 50px;
 }
-#final-calc {
+.final-calc {
     width: 38px;
     height: 50px;
 }
-#account{
+.account{
     width: 45px;
     height: 50px;
 }
-#logo {
+.logo {
     width: 180px;
     height: 50px;
 }
@@ -135,23 +135,23 @@ nav {
         display: block;
         justify-content: center;
     }
-    #clipboard{
+    .clipboard{
         width: 30px;
         height: 40px;
     }
-    #study-timer {
+    .study-timer {
         width: 40px;
         height: 40px;
     }
-    #final-calc {
+    .final-calc {
         width: 28px;
         height: 40px;
     }
-    #account{
+    .account{
         width: 36px;
         height: 40px;
     }
-    #logo {
+    .logo {
         width: 150px;
         height: 40px;
     }
@@ -214,23 +214,23 @@ nav {
         display: block;
         justify-content: center;
     }
-    #clipboard{
+    .clipboard{
         width: 18px;
         height: 23px;
     }
-    #study-timer {
+    .study-timer {
         width: 23px;
         height: 23px;
     }
-    #final-calc {
+    .final-calc {
         width: 17px;
         height: 23px;
     }
-    #account{
+    .account{
         width: 20px;
         height: 23px;
     }
-    #logo {
+    .logo {
         width: 78px;
         height: 23px;
     }

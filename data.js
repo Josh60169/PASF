@@ -44,6 +44,10 @@ async function fetchProfile(){
 fetchProfile().catch((error) => {
     console.log('Error: ',error);
 })
+const logout_btn =document.getElementById('logout_btn');
+logout_btn.addEventListener('click', async() => {
+    window.location.href="logout.html";
+})
 
 const update_btn=document.getElementById('update_btn');
 update_btn.addEventListener('click',async () => {
