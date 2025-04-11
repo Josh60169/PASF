@@ -28,23 +28,24 @@ signupBtn?.addEventListener("click", async () =>{
     const firstName = document.getElementById("first-name").value;
     const lastName = document.getElementById("last-name").value;
     const city = document.getElementById("city").value;
-
-    const{error: signupError} = await supabase.auth.signUp({email, password});
-    //console.log(user);
-    if(signupError){
-        document.getElementById("error-msg").textContent = signupError.message;
-
-
-    } else {
-        const{error: insertError} = await supabase.from('table1').insert([{
-            firstname: firstName, lastname: lastName, city: city, email: email
-        }]);
+    if(firstName && lastName && city){
+        const{error: signupError} = await supabase.auth.signUp({email, password});
+        //console.log(user);
+        if(signupError){
+            document.getElementById("error-msg").textContent = signupError.message;
+        } else {
+            const{error: insertError} = await supabase.from('table1').insert([{
+                firstname: firstName, lastname: lastName, city: city, email: email
+            }]);
 
 
-        if(insertError){
-            document.getElementById("error-msg").textContent = insertError.message;
-        }else{
-            window.location.href = 'index.html';
+            if(insertError){
+                document.getElementById("error-msg").textContent = insertError.message;
+            }else{
+                window.location.href = 'index.html';
+            }
         }
-    }
+    }else
+        document.getElementById("error-msg").textContent = "ERROR: Missing Info, please make sure first name, last name, and city are all filled in.";
+
 })
