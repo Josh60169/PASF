@@ -29,7 +29,7 @@ button {
 }
 
 #addBtn{
-    background: linear-gradient(90deg, #038400, #00ff21);
+    background: radial-gradient(#00ff21,#038400);
     border: none;
     cursor: pointer;
     border-radius: 25px;
@@ -38,7 +38,7 @@ button {
     width: 8em;
 }
 #removeBtn{
-    background: linear-gradient(90deg, #b50101, #ff0000);
+    background: radial-gradient(#ff0000,#b50101);
     border: none;
     cursor: pointer;
     border-radius: 25px;
@@ -47,7 +47,7 @@ button {
     width: 8em;
 }
 #sortBtn{
-    background: linear-gradient(90deg, #b59101, #fff200);
+    background: radial-gradient(#fff200,#b59101);
     border: none;
     cursor: pointer;
     border-radius: 25px;

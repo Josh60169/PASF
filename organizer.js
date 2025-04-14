@@ -102,9 +102,16 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
 document.getElementById("remove-form").addEventListener('submit', (event) => {
     event.preventDefault();
     let idToRemove = document.getElementById("org-remove-txtbox").value;
-    removeTask(idToRemove);
-    document.getElementById("remove-form").style.display = 'none';
-    updateDisplay();
+    if (idToRemove <=0 || idToRemove >= tasks.length++) {
+        console.log("Error: Invalid Index");
+        document.getElementById('error-msg').textContent="Error: Invalid Index";
+        document.getElementById("error-msg").style.display= 'block';
+        document.getElementById("remove-form").style.display = 'none';
+    }else{
+        removeTask(idToRemove);
+        document.getElementById("remove-form").style.display = 'none';
+        updateDisplay();
+    }
 });
 
 
@@ -155,7 +162,7 @@ const updateSupabaseArrays = async () => {
     }
 }
 function arrSort(arr, index) {
-    //index 1=priority 2=month 3=day 4=Year
+    //index in task array 1=priority 2=month 3=day 4=Year
     if (index === 2 || index === 3 || index === 4)
         arr = arr.sort((b, a) => b[index] - a[index]);
     else 

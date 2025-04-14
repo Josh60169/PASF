@@ -16,13 +16,13 @@ body{
     border-radius: 25px;
 }
 button{
-    background: linear-gradient(90deg, #7d7d7d, #d1d1d1);
+    background: radial-gradient(#c5c5c5, #d1d1d1);
     border: none;
     cursor: pointer;
     border-radius: 25px;
 }
 button:hover{
-    background: linear-gradient(90deg, #5f5e5e, #9f9f9f);
+    background: radial-gradient(#5f5e5e, #6c6c6c);
 }
 #error-msg{
     color: lightcoral;
