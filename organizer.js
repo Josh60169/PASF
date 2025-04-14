@@ -75,9 +75,8 @@ const sortBtnClicked = () => {
     else
         form.style.display = 'none';
 };
-let taskImportance = document.getElementById('org-importance-slider').value;
-taskImportance.addEventListener('input', function (){
-
+document.getElementById("org-importance-slider").addEventListener("change", (e) => {
+    document.getElementById("org-importance-value").textContent = "Selected Importance: "+document.getElementById("org-importance-slider").value;
 })
 document.getElementById("add-form").addEventListener('submit', (event) => {
     event.preventDefault();
@@ -87,8 +86,9 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     let taskImportance = document.getElementById('org-importance-slider').value;
     let dueMonth = parseInt(document.getElementById('org-date-month').value);
     let dueDay = parseInt(document.getElementById('org-date-day').value);
+    let dueYear = parseInt(document.getElementById('org-date-year').value);
     if(dueMonth>0&&dueMonth<12&&dueDay>0&&dueDay<31){
-        tasks.push([taskName, taskImportance, dueMonth, dueDay, idAssigner]);
+        tasks.push([taskName, taskImportance, dueMonth, dueDay, dueYear, idAssigner]);
         idAssigner++;
     }else {
         console.log("Error: Invalid Date");
@@ -117,22 +117,22 @@ const updateDisplay = () => {
     // re-renders assignment list
     for (let i = 0; i < tasks.length; i++) {
         let newAssignment = document.createElement('li');
-        newAssignment.innerText = `${tasks[i][0]}   \nDue Date: ${tasks[i][2]}/${tasks[i][3]}`;
+        newAssignment.innerText = `${tasks[i][0]}   \nDue Date: ${tasks[i][2]}/${tasks[i][3]}/${tasks[i][4]}`;
         assignmentsDisplay.appendChild(newAssignment);
     }
     // re-renders priority list
     for (let j = 0; j < tasks.length; j++) {
         let newId = document.createElement('li');
-        newId.innerText = `index:${tasks[j][4]} \npriority:${tasks[j][1]} \n`;
+        newId.innerText = `index:${tasks[j][5]} \npriority:${tasks[j][1]} \n`;
         priorityDisplay.appendChild(newId);
     }
 };
 const removeTask = (id) => {
     tasks.splice(id - 1, 1);
     for (let i = 0; i < tasks.length; i++) {
-        tasks[i][4] = i + 1;
+        tasks[i][5] = i + 1;
         //console.log('hi')
-        console.log(tasks[i][4]);
+        console.log(tasks[i][5]);
     }
     idAssigner--
     updateSupabaseArrays();
@@ -155,24 +155,24 @@ const updateSupabaseArrays = async () => {
     }
 }
 function arrSort(arr, index) {
-    //index 1=priority 2=month 3=day
-    if (index === 2 || index === 3)
+    //index 1=priority 2=month 3=day 4=Year
+    if (index === 2 || index === 3 || index === 4)
         arr = arr.sort((b, a) => b[index] - a[index]);
     else 
         arr = arr.sort((a, b) => b[index] - a[index]);
 
     for (let i = 0; i < tasks.length; i++) {
-        tasks[i][4] = i + 1;
+        tasks[i][5] = i + 1;
     }
     return arr;
 }
 document.getElementById("sortByPriority").addEventListener('click', (event) => {
-    tasks = arrSort(arrSort(arrSort(tasks, 3), 2), 1);
+    tasks = arrSort(arrSort(arrSort(arrSort(tasks, 3),  2) , 4) , 1);
     updateSupabaseArrays();
     updateDisplay();
 })
 document.getElementById("sortByDueDate").addEventListener('click', (event) => {
-    tasks = arrSort( arrSort( arrSort(tasks, 1), 3), 2);
+    tasks = arrSort( arrSort( arrSort( arrSort(tasks, 1), 3), 2), 4);
     updateSupabaseArrays();
     updateDisplay();
 })
