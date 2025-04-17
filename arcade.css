@@ -14,8 +14,12 @@
     height: 3em;
 }
 .closeBtn{
-    width: 4em; 
-    height: 2em;
+    width: 5em;
+    height: 3em;
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 #arcade-timer-header{
     height: 10px;
@@ -27,4 +31,13 @@
 
 body {
     text-align: center;
+}
+.timer-Btn-arcade{
+    width: 7em;
+    height: 3em;
+    margin: 1px 1px 1px;
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }

@@ -15,6 +15,19 @@ document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) =
     setTimer(0, timeAmount, 0);
 });
 
+document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    timeAmount++;
+    setTimer(0, timeAmount, 0);
+});
+
+document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    timeAmount++;
+    setTimer(0, timeAmount, 0);
+});
 // clears timer if clear button is clicked
 document.querySelector("#arcade-clear-btn").addEventListener("click", (event) => {
     event.preventDefault();

@@ -139,7 +139,7 @@ const removeTask = (id) => {
     for (let i = 0; i < tasks.length; i++) {
         tasks[i][5] = i + 1;
         //console.log('hi')
-        console.log(tasks[i][5]);
+        //console.log(tasks[i][5]);
     }
     idAssigner--
     updateSupabaseArrays();
@@ -183,3 +183,11 @@ document.getElementById("sortByDueDate").addEventListener('click', (event) => {
     updateSupabaseArrays();
     updateDisplay();
 })
+
+let assignmentContainer = document.getElementById('assignments-div');
+let priorityContainer = document.getElementById('priority-div');
+
+assingmentContainer.addEventListener('scroll', (event) => {
+    console.log(assignmentContainer.scrollTop);
+    assignmentContainer.scrollTop = priorityContainer.scrollTop;
+});

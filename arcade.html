@@ -87,14 +87,18 @@
             </div>
             <div id="timer-btns" class="container-fluid">
                 <div class="row" id="btn-div">
-                    <button id="arcade-start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info">Start</button>
-                    <button id="arcade-stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info">Stop</button>
+                    <button id="arcade-start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info  timer-Btn-arcade">Start</button>
+                    <button id="arcade-stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info timer-Btn-arcade">Stop</button>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="row" id="timerChange-btn-div">
-                    <button id="arcade-addMin-btn">Add one minuete</button>
-                    <button id="arcade-clear-btn">Clear the timer</button>
+                    <button id="arcade-add5Min-btn" class="timer-Btn-arcade">Add five minute</button>
+                    <button id="arcade-addMin-btn" class="timer-Btn-arcade">Add one minute</button>
+                </div>
+                <div class="row" id="timerChange-btn-div-2">
+                    <button id="arcade-add30sec-btn" class="timer-Btn-arcade">Add 30 seconds</button>
+                    <button id="arcade-clear-btn" class="timer-Btn-arcade">Clear the timer</button>
                 </div>
             </div>
         </div>
@@ -102,11 +106,11 @@
 </div>
 <div class="text-center">
     <div style="display: none;" id="policeGame" class="text-center">
-        <button id="arcade-backFrom-PoliceGame" class="VerticalList closeBtn white" >Close</button>
+        <button id="arcade-backFrom-PoliceGame" class="VerticalList closeBtn" >Close</button>
         <iframe width="850" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&read_only=True&show_file_tree=False" frameborder="0" allowfullscreen class="video-iframe VerticalList"></iframe>
     </div>
     <div style="display: none;" id="zombieDefense" class="text-center">
-        <button id="arcade-backFrom-ZombieDefense" class="VerticalList closeBtn white">Close</button>
+        <button id="arcade-backFrom-ZombieDefense" class="VerticalList closeBtn">Close</button>
         <iframe width="850" height="850" src="https://codehs.com/sandbox/id/zombie-defense-B8fLVP/embed/?display_mode=displayOnly&read_only=True&show_file_tree=False" frameborder="0" allowfullscreen class="video-iframe VerticalList"></iframe>
     </div>
 </div>
