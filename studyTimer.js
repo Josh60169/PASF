@@ -16,11 +16,18 @@ const customBtnClick = () => {
 // Implements the customized settings given from the user
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const hrs = document.querySelector('input[name="cust-hrs"]').value, mins = document.querySelector('input[name="cust-mins"]').value, 
+    let hrs = document.querySelector('input[name="cust-hrs"]').value, mins = document.querySelector('input[name="cust-mins"]').value, 
     secs = document.querySelector('input[name="cust-secs"]').value;
 
-    if (hrs >= 0 && mins >= 0 && secs >= 0) {
-        setTimer(document.querySelector('input[name="cust-hrs"]').value, document.querySelector('input[name="cust-mins"]').value, document.querySelector('input[name="cust-secs"]').value);
+    if (hrs === "")
+        hrs = 0;
+    if (mins === "")
+        mins = 0;
+    if (secs === "")
+        secs = 0;
+
+    if (parseInt(hrs) >= 0 && parseInt(mins) >= 0 && parseInt(secs) >= 0) {
+        setTimer(hrs, mins, secs);
     }
 });
 
@@ -55,6 +62,14 @@ const countDownTimer = () => {
         setTimer(parseInt(time[0]) - 1, 59, 59)
     } else {
         timerFlag = true;
+        stopBtn.disabled = true;
+        startBtn.disabled = false;
+
+        if (alarmFlag) {
+            alarmFlag = false;
+            alarmSound.pause();
+            alarmSound.currentTime = 0;
+        }
         timerAlarm();
     }
 };
@@ -106,6 +121,8 @@ const stopTimer = () => {
     if (timerFlag) {
         clearInterval(countDownID);
         clearInterval(stopTimerID);
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
     }
 };
 

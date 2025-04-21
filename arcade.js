@@ -4,36 +4,40 @@ let alarmSound;
 let startBtn = document.getElementById("arcade-start-btn");
 let stopBtn = document.getElementById("arcade-stop-btn");
 stopBtn.disabled = true;
-
-let timeAmount = 0; // Amount of time on timer in minutes
-
+let hours =0;// Amount of time on the timer in hours
+let minutes = 0; // Amount of time on timer in minutes
+let seconds = 0;//Amount of time on the timer in second
 // Adds 1 minute if add 1 minute button is clicked
 document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) => {
     event.preventDefault();
 
-    timeAmount++;
-    setTimer(0, timeAmount, 0);
+    minutes++;
+    setTimer(hours, minutes, seconds);
 });
 
-document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) => {
+document.querySelector("#arcade-add30sec-btn").addEventListener("click", (event) => {
     event.preventDefault();
-
-    timeAmount++;
-    setTimer(0, timeAmount, 0);
+    seconds=seconds+30;
+    while (seconds >= 60) {
+        seconds -= 60;
+        minutes++;
+    }
+    setTimer(hours, minutes, seconds);
 });
 
-document.querySelector("#arcade-addMin-btn").addEventListener("click", (event) => {
+document.querySelector("#arcade-add5Min-btn").addEventListener("click", (event) => {
     event.preventDefault();
 
-    timeAmount++;
-    setTimer(0, timeAmount, 0);
+    minutes=minutes+5;
+    setTimer(hours, minutes, seconds);
 });
 // clears timer if clear button is clicked
 document.querySelector("#arcade-clear-btn").addEventListener("click", (event) => {
     event.preventDefault();
-
-    timeAmount = 0;
-    setTimer(0, timeAmount, 0);
+    hours=0;
+    minutes = 0;
+    seconds=0;
+    setTimer(hours, minutes, seconds);
 });
 
 // Variables for managing the timer
@@ -58,7 +62,23 @@ const startTimer = () => {
 // Makes the timer count down
 const countDownTimer = () => {
     let time = document.getElementById("timer-time").innerText.split(":");
-
+    seconds--;
+    if(seconds <= 0) {
+        minutes --;
+        seconds+=60;
+        if(minutes <= 0) {
+            hours --;
+            minutes +=60;
+        }
+    }
+    if(seconds >= 60) {
+        minutes ++;
+        seconds-=60;
+        if(minutes >= 60) {
+            hours ++;
+            minutes -=60;
+        }
+    }
     if (parseInt(time[2]) !== 0) {
         setTimer(parseInt(time[0]), parseInt(time[1]), parseInt(time[2]) - 1);
     } else if (parseInt(time[1]) !== 0) {
@@ -67,6 +87,14 @@ const countDownTimer = () => {
         setTimer(parseInt(time[0]) - 1, 59, 59)
     } else {
         timerFlag = true;
+        stopBtn.disabled = true;
+        startBtn.disabled = false;
+
+        if (alarmFlag) {
+            alarmFlag = false;
+            alarmSound.pause();
+            alarmSound.currentTime = 0;
+        }
         timerAlarm();
     }
 };
@@ -79,7 +107,9 @@ const setTimer = (hrs, mins, secs) => {
         hrs = Math.trunc(parseInt(hrs) + addToHours);
         mins = Math.trunc(parseInt(mins) % 60);
     }
-
+    seconds=secs;
+    minutes=mins;
+    hours=hrs;
     let newHrs = '';
     let newMins = '';
     let newSecs = '';
