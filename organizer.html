@@ -69,13 +69,14 @@
             </div>
 
             <div class="horizontalList">
-                <div class="VerticalList"><!--Buttons-->
+                <div class="VerticalList" id="org-button-div"><!--Buttons-->
                     <button class="col-sm-2 boldRobotoF horizontalList" id="addBtn" onclick="addBtnClicked()">ADD +</button>
                     <button class="col-sm-2 boldRobotoF horizontalList" id="removeBtn" onclick="removeBtnClicked()">REMOVE -</button>
                     <button class="col-sm-2 boldRobotoF horizontalList" id="sortBtn" onclick="sortBtnClicked()">SORT</button>
                 </div>
                 <h2 id="error-msg" style="display: none" class="red regularOrbitron">Error</h2>
-                <div class="VerticalList"><!--forms-->
+                <div class="VerticalList" id="org-form-div"><!--forms-->
+
                     <form style="display: none" id="add-form" class="col-sm-3">
                         <div class="container">
                             <label for="org-name-txtbox" class="boldRobotoF white">Name: </label><input type="text" id="org-name-txtbox"><br>
@@ -106,9 +107,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div id="bottomScroll"></div>
         </div>        
     </div>
 </body>

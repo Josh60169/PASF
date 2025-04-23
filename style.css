@@ -58,7 +58,10 @@ button:hover{
     font-style: normal;
     font-size: 20px;
 }
-
+#left{
+    position: relative;
+    top: -16.5em;
+}
 
 .cyan{
     color: #5ce1e6;
@@ -155,7 +158,10 @@ nav {
         width: 150px;
         height: 40px;
     }
-
+    #left{
+        position: relative;
+        top: 0;
+    }
     .headerOrbitron{
         font-size: 55px;
     }
@@ -201,7 +207,10 @@ nav {
         font-style: normal;
         font-size: 15px;
     }
-
+    #left{
+        position: relative;
+        top: 0;
+    }
     input{
         width: 100%;
     }
