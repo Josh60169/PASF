@@ -1,0 +1,200 @@
+#assignments-div {
+    width: 15em;
+    margin: 40px;
+    padding: 10px;
+    background: radial-gradient(#5a5a5a, #424242);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    height: 25em;
+    overflow: scroll;
+}
+#priority-div {
+    width: 10em;
+    margin: 40px;
+    padding: 10px;
+    background: radial-gradient(#5a5a5a, #424242);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    height: 25em;
+    overflow: scroll;
+}
+
+.listFont{
+    font-size: 15px;
+}
+
+button {
+    margin: 5px;
+}
+
+
+.dueDateTxtBox {
+    width: 4em;
+}
+
+#org-button-div{
+    position: relative;
+    top: -12em;
+}
+#org-form-div{
+    position: relative;
+    top: -12em;
+}
+
+#addBtn{
+    background: radial-gradient(#00ff21,#038400);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 30px;
+    height:2em;
+    width: 8em;
+}
+#removeBtn{
+    background: radial-gradient(#ff0000,#b50101);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 30px;
+    height:2em;
+    width: 8em;
+}
+#sortBtn{
+    background: radial-gradient(#fff200,#b59101);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 30px;
+    height:2em;
+    width: 8em;
+}
+
+#bottomScroll{
+    height: 40em;
+}
+
+@media (max-width: 1400px) and (min-width: 601px) {
+    #assignments-div {
+        width: 20em;
+        margin: 40px;
+        padding: 10px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 25px;
+        font-size: 10px;
+    }
+
+    #priority-div {
+        width: 13em;
+        margin: 40px;
+        padding: 10px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 25px;
+        font-size: 10px;
+    }
+
+    .listFont{
+        font-size: 13px;
+    }
+
+    #addBtn{
+        background: linear-gradient(90deg, #038400, #00ff21);
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        height:2em;
+        width: 7em;
+    }
+    #removeBtn{
+        background: linear-gradient(90deg, #b50101, #ff0000);
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        height:2em;
+        width: 7em;
+    }
+    #sortBtn{
+        background: linear-gradient(90deg, #b59101, #fff200);
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        height:2em;
+        width: 7em;
+    }
+
+    #org-button-div{
+        position: relative;
+        top: 0;
+    }
+    #org-form-div{
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    #addBtn {
+        background: linear-gradient(90deg, #038400, #00ff21);
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 10px;
+        height:3em;
+        width: 10em;
+    }
+
+    #removeBtn {
+        background: linear-gradient(90deg, #b50101, #ff0000);
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 10px;
+        height:3em;
+        width: 10em;
+    }
+    #sortBtn{
+        background: linear-gradient(90deg, #b59101, #fff200);
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 10px;
+        height:3em;
+        width: 10em;
+    }
+
+    #assignments-div {
+        width: 18em;
+        margin: 8px;
+        padding: 3px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        font-size: 10px;
+    }
+
+    #priority-div {
+        width: 11em;
+        margin: 8px;
+        padding: 3px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        font-size: 10px;
+    }
+    .listFont{
+        font-size: 10px;
+    }
+
+    #org-button-div{
+        position: relative;
+        top: 0;
+    }
+    #org-form-div{
+        position: relative;
+        top: 0;
+    }
+}

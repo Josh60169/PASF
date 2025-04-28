@@ -1,0 +1,268 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(0deg, #020066, #094caf);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: radial-gradient(#5a5a5a, #424242);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+}
+button{
+    background: radial-gradient(#c5c5c5, #d1d1d1);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+button:hover{
+    background: radial-gradient(#5f5e5e, #6c6c6c);
+}
+#error-msg{
+    color: lightcoral;
+}
+
+.headerOrbitron{
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #79ceff;
+    font-size: 75px;
+}
+.regularOrbitron{
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: 20px;
+}
+.boldRobotoF{
+    font-family: "RobotoF", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 20px;
+}
+.regularRobotoF{
+    font-family: "RobotoF", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+#left{
+    position: relative;
+    top: -16.5em;
+}
+
+.cyan{
+    color: #5ce1e6;
+}
+.lightBlue{
+    color: #79ceff;
+}
+.white{
+    color: white;
+}
+.red{
+    color: lightcoral;
+}
+
+nav {
+    position: fixed;
+    display: inline;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(#5a5a5a, #424242);
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+.nav-element {
+    float: left;
+    margin: 2% 0% 2% 13%;
+    padding: 5px;
+    list-style-type: none;
+    display: block;
+    justify-content: center;
+}
+
+.clipboard{
+    width: 38px;
+    height: 50px;
+}
+.study-timer {
+    width: 50px;
+    height: 50px;
+}
+.final-calc {
+    width: 38px;
+    height: 50px;
+}
+.account{
+    width: 45px;
+    height: 50px;
+}
+.logo {
+    width: 180px;
+    height: 50px;
+}
+
+.scrollText{
+    position: absolute;
+    bottom: 10em;
+    right: 5em;
+    display: block;
+}
+
+#hr-line {
+    border-width: 5px;
+}
+.VerticalList{
+    display: block;
+}
+.horizontalList{
+    display: inline-block;
+}
+#signup_btn{
+    border-radius: 25px;
+}
+
+@media (max-width: 1400px) and (min-width: 901px) {
+    .nav-element {
+        float: left;
+        margin: 2% 0% 2% 8%;
+        padding: 1px;
+        list-style-type: none;
+        display: block;
+        justify-content: center;
+    }
+    .clipboard{
+        width: 30px;
+        height: 40px;
+    }
+    .study-timer {
+        width: 40px;
+        height: 40px;
+    }
+    .final-calc {
+        width: 28px;
+        height: 40px;
+    }
+    .account{
+        width: 36px;
+        height: 40px;
+    }
+    .logo {
+        width: 150px;
+        height: 40px;
+    }
+    .scrollText{
+        position: absolute;
+        bottom: 10em;
+        right: 5em;
+        display: block;
+    }
+    #left{
+        position: relative;
+        top: 0;
+    }
+    .headerOrbitron{
+        font-size: 55px;
+    }
+}
+
+@media  (max-width: 900px) {
+    .container {
+        max-width: 350px;
+        margin: 25px auto;
+        padding: 10px;
+        background: radial-gradient(#5a5a5a, #424242);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 25px;
+    }
+button{
+    height: 35px;
+    width: 90px;
+}
+    .boldRobotoF{
+        font-family: "RobotoF", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 15px;
+    }
+    .regularRobotoF{
+        font-family: "RobotoF", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+    }
+
+    .headerOrbitron{
+        font-family: "Orbitron", serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        color: #79ceff;
+        font-size: 30px;
+    }
+    .regularOrbitron{
+        font-family: "Orbitron", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 15px;
+    }
+    #left{
+        position: relative;
+        top: 0;
+    }
+    input{
+        width: 100%;
+    }
+
+    .nav-element {
+        float: left;
+        margin: 1% 2% 10% 8%;
+        padding: 1px;
+        list-style-type: none;
+        display: block;
+        justify-content: center;
+    }
+    .clipboard{
+        width: 18px;
+        height: 23px;
+    }
+    .study-timer {
+        width: 23px;
+        height: 23px;
+    }
+    .final-calc {
+        width: 17px;
+        height: 23px;
+    }
+    .account{
+        width: 20px;
+        height: 23px;
+    }
+    .logo {
+        width: 78px;
+        height: 23px;
+    }
+    .scrollText{
+        position: absolute;
+        bottom: 10em;
+        right: 5em;
+        display: none;
+    }
+}
