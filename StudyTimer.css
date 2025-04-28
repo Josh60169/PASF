@@ -34,7 +34,6 @@ body {
 #timer-btns{
     height: 25px;
 }
-
 @media (max-width: 600px) {
     #start-btn {
         display: block;

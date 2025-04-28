@@ -73,7 +73,7 @@ button {
     height: 40em;
 }
 
-@media (max-width: 1200px) and (min-width: 601px) {
+@media (max-width: 1400px) and (min-width: 601px) {
     #assignments-div {
         width: 20em;
         margin: 40px;
