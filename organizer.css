@@ -9,7 +9,7 @@
     overflow: scroll;
 }
 #priority-div {
-    width: 10em;
+    width: 12em;
     margin: 40px;
     padding: 10px;
     background: radial-gradient(#5a5a5a, #424242);
@@ -85,7 +85,7 @@ button {
     }
 
     #priority-div {
-        width: 13em;
+        width: 15em;
         margin: 40px;
         padding: 10px;
         background: radial-gradient(#5a5a5a, #424242);
@@ -177,7 +177,7 @@ button {
     }
 
     #priority-div {
-        width: 11em;
+        width: 14em;
         margin: 8px;
         padding: 3px;
         background: radial-gradient(#5a5a5a, #424242);

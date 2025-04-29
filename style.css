@@ -116,11 +116,25 @@ nav {
     height: 50px;
 }
 
+@keyframes bounce {
+    40% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .scrollText{
     position: absolute;
     bottom: 10em;
     right: 5em;
     display: block;
+    animation: bounce;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
 }
 
 #hr-line {
@@ -180,7 +194,7 @@ nav {
     }
 }
 
-@media  (max-width: 900px) {
+@media (max-width: 900px) {
     .container {
         max-width: 350px;
         margin: 25px auto;

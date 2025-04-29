@@ -41,3 +41,11 @@ body {
     font-weight: 600;
     font-style: normal;
 }
+#phone-warning-arcade{
+    display: none;
+}
+@media (max-width: 900px) {
+    #phone-warning-arcade{
+        display: block;
+    }
+}
