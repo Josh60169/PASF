@@ -22,7 +22,7 @@
 .txtbox{
     width: 200px;
 }
-@media  (max-width: 600px) {
+@media  (max-width: 900px) {
 
     #current_grade_p {
         font-size: 12px;

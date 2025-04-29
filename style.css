@@ -136,7 +136,7 @@ nav {
     border-radius: 25px;
 }
 
-@media (max-width: 1400px) and (min-width: 601px) {
+@media (max-width: 1400px) and (min-width: 901px) {
     .nav-element {
         float: left;
         margin: 2% 0% 2% 8%;
@@ -169,7 +169,7 @@ nav {
         position: absolute;
         bottom: 10em;
         right: 5em;
-        display: none;
+        display: block;
     }
     #left{
         position: relative;
@@ -180,7 +180,7 @@ nav {
     }
 }
 
-@media  (max-width: 600px) {
+@media  (max-width: 900px) {
     .container {
         max-width: 350px;
         margin: 25px auto;
@@ -189,7 +189,10 @@ nav {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         border-radius: 25px;
     }
-
+button{
+    height: 35px;
+    width: 90px;
+}
     .boldRobotoF{
         font-family: "RobotoF", sans-serif;
         font-optical-sizing: auto;
@@ -230,7 +233,7 @@ nav {
 
     .nav-element {
         float: left;
-        margin: 1% 1% 8% 5%;
+        margin: 1% 2% 10% 8%;
         padding: 1px;
         list-style-type: none;
         display: block;

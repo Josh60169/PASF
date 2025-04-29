@@ -136,15 +136,15 @@ button {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     #addBtn {
         background: linear-gradient(90deg, #038400, #00ff21);
         border: none;
         cursor: pointer;
         border-radius: 12px;
         font-size: 10px;
-        height: 2em;
-        width: 6em;
+        height:3em;
+        width: 10em;
     }
 
     #removeBtn {
@@ -153,8 +153,8 @@ button {
         cursor: pointer;
         border-radius: 12px;
         font-size: 10px;
-        height: 2em;
-        width: 7em;
+        height:3em;
+        width: 10em;
     }
     #sortBtn{
         background: linear-gradient(90deg, #b59101, #fff200);
@@ -162,8 +162,8 @@ button {
         cursor: pointer;
         border-radius: 12px;
         font-size: 10px;
-        height:2em;
-        width: 6em;
+        height:3em;
+        width: 10em;
     }
 
     #assignments-div {
