@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
@@ -44,6 +45,7 @@
                 </li>
             </ul>
         </nav>
+        <img src="assets/scrollText.png" alt="scrollText" class="scrollText" >
     </div>
 <div class="text-center">
     <div id="left">
@@ -60,7 +62,7 @@
             </div>
         </div>
         <div class="container" id="text">
-            <h3 class="regularRobotoF cyan">The study timer helps you stay focused on your work. Just select a how long you want to work for or make a custom timer if you don’t see what you want.</h3>
+            <h3 class="regularRobotoF cyan">The study timer helps you stay focused on your work. Just select a how long you want to work for or set a custom length timer.</h3>
         </div>
     </div>
 
@@ -78,13 +80,13 @@
                 <form id="customInputBox" style="padding: 5px">
                     <div class="row">
                         <div class="col-xs-1">
-                            <label for="custom-time-hrs">Hrs</label><input type="number" name="cust-hrs" id="custom-time-hrs" required>
+                            <label for="custom-time-hrs">Hrs</label><input type="number" name="cust-hrs" id="custom-time-hrs">
                         </div>
                         <div class="col-xs-1">
-                            <label for="custom-time-mins">Min</label><input type="number" name="cust-mins" id="custom-time-mins"  required>
+                            <label for="custom-time-mins">Min</label><input type="number" name="cust-mins" id="custom-time-mins">
                         </div>
                         <div class="col-xs-1">
-                            <label for="custom-time-secs">Sec</label><input type="number" name="cust-secs" id="custom-time-secs" required>
+                            <label for="custom-time-secs">Sec</label><input type="number" name="cust-secs" id="custom-time-secs">
                         </div>
                     </div>
                     <!--label for="pomodoro">Pomodoro</label><input type="radio" name="radAns" id="pomodoro" required><br>
@@ -99,6 +101,7 @@
             <a href ="arcade.html" class="regularOrbitron cyan" >Want to take a break? Go to the arcade</a>
             <h2 class="regularRobotoF white" id="timerWarning">If you leave the study timer window it will clear the timer.</h2>
         </div>
+        <div id="bottomScroll" style="height: 10em"></div>
     </div>
 </div>
 

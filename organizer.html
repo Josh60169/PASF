@@ -69,13 +69,14 @@
             </div>
 
             <div class="horizontalList">
-                <div class="VerticalList"><!--Buttons-->
+                <div class="VerticalList" id="org-button-div"><!--Buttons-->
                     <button class="col-sm-2 boldRobotoF horizontalList" id="addBtn" onclick="addBtnClicked()">ADD +</button>
                     <button class="col-sm-2 boldRobotoF horizontalList" id="removeBtn" onclick="removeBtnClicked()">REMOVE -</button>
                     <button class="col-sm-2 boldRobotoF horizontalList" id="sortBtn" onclick="sortBtnClicked()">SORT</button>
                 </div>
                 <h2 id="error-msg" style="display: none" class="red regularOrbitron">Error</h2>
-                <div class="VerticalList"><!--forms-->
+                <div class="VerticalList" id="org-form-div"><!--forms-->
+
                     <form style="display: none" id="add-form" class="col-sm-3">
                         <div class="container">
                             <label for="org-name-txtbox" class="boldRobotoF white">Name: </label><input type="text" id="org-name-txtbox"><br>
@@ -92,7 +93,7 @@
 
                     <form style="display: none" id="remove-form" class="col-sm-3">
                         <div class="container">
-                            <h2 class="cyan regularRobotoF">Remove a task by entering its index or input no index and it deletes the last index</h2>
+                            <h2 class="cyan regularRobotoF">Remove a task by entering its index</h2>
                             <label for="org-remove-txtbox" class="boldRobotoF white">Remove by index: </label><input type="number" id="org-remove-txtbox">
                             <input type="submit">
                         </div>
@@ -106,11 +107,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div id="bottomScroll"></div>
         </div>        
     </div>
+    <div id="bottomScroll" style="height: 10em"></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!--<script src="data.js"></script>-->

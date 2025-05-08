@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
@@ -47,6 +48,7 @@
 <div id="arcade-selectGame" class="text-center">
     <div class="horizontalList">
         <div class="VerticalList container" id="infoBox">
+            <h2 class="red boldRobotoF" id="phone-warning-arcade">WARNING NOT BUILT FOR PHONES.</h2>
             <h2 class="cyan regularRobotoF">Breaks are important to keep your focus and reduce stress levels. Below, we have attached a few games for your enjoyment.</h2>
         </div>
         <div class="VerticalList container" id="selectGameBox">
@@ -87,14 +89,18 @@
             </div>
             <div id="timer-btns" class="container-fluid">
                 <div class="row" id="btn-div">
-                    <button id="arcade-start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info">Start</button>
-                    <button id="arcade-stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info">Stop</button>
+                    <button id="arcade-start-btn" onclick="startTimer()" class="col-sm-3 btn btn-info  timer-Btn-arcade">Start</button>
+                    <button id="arcade-stop-btn" onclick="stopBtnClicked()" class="col-sm-3 btn btn-info timer-Btn-arcade">Stop</button>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="row" id="timerChange-btn-div">
-                    <button id="arcade-addMin-btn">Add one minuete</button>
-                    <button id="arcade-clear-btn">Clear the timer</button>
+                    <button id="arcade-add5Min-btn" class="timer-Btn-arcade">Add five minute</button>
+                    <button id="arcade-addMin-btn" class="timer-Btn-arcade">Add one minute</button>
+                </div>
+                <div class="row" id="timerChange-btn-div-2">
+                    <button id="arcade-add30sec-btn" class="timer-Btn-arcade">Add 30 seconds</button>
+                    <button id="arcade-clear-btn" class="timer-Btn-arcade">Clear the timer</button>
                 </div>
             </div>
         </div>
@@ -102,11 +108,11 @@
 </div>
 <div class="text-center">
     <div style="display: none;" id="policeGame" class="text-center">
-        <button id="arcade-backFrom-PoliceGame" class="VerticalList closeBtn white" >Close</button>
+        <button id="arcade-backFrom-PoliceGame" class="VerticalList closeBtn" >Close</button>
         <iframe width="850" height="850" src="https://codehs.com/sandbox/id/police-game-zdsCcp/embed/?display_mode=displayOnly&read_only=True&show_file_tree=False" frameborder="0" allowfullscreen class="video-iframe VerticalList"></iframe>
     </div>
     <div style="display: none;" id="zombieDefense" class="text-center">
-        <button id="arcade-backFrom-ZombieDefense" class="VerticalList closeBtn white">Close</button>
+        <button id="arcade-backFrom-ZombieDefense" class="VerticalList closeBtn">Close</button>
         <iframe width="850" height="850" src="https://codehs.com/sandbox/id/zombie-defense-B8fLVP/embed/?display_mode=displayOnly&read_only=True&show_file_tree=False" frameborder="0" allowfullscreen class="video-iframe VerticalList"></iframe>
     </div>
 </div>

@@ -5,14 +5,18 @@
     background: radial-gradient(#5a5a5a, #424242);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 25px;
+    height: 25em;
+    overflow: scroll;
 }
 #priority-div {
-    width: 10em;
+    width: 12em;
     margin: 40px;
     padding: 10px;
     background: radial-gradient(#5a5a5a, #424242);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 25px;
+    height: 25em;
+    overflow: scroll;
 }
 
 .listFont{
@@ -26,6 +30,15 @@ button {
 
 .dueDateTxtBox {
     width: 4em;
+}
+
+#org-button-div{
+    position: relative;
+    top: -12em;
+}
+#org-form-div{
+    position: relative;
+    top: -12em;
 }
 
 #addBtn{
@@ -60,7 +73,7 @@ button {
     height: 40em;
 }
 
-@media (max-width: 1200px) and (min-width: 601px) {
+@media (max-width: 1400px) and (min-width: 601px) {
     #assignments-div {
         width: 20em;
         margin: 40px;
@@ -72,7 +85,7 @@ button {
     }
 
     #priority-div {
-        width: 13em;
+        width: 15em;
         margin: 40px;
         padding: 10px;
         background: radial-gradient(#5a5a5a, #424242);
@@ -113,17 +126,25 @@ button {
         width: 7em;
     }
 
+    #org-button-div{
+        position: relative;
+        top: 0;
+    }
+    #org-form-div{
+        position: relative;
+        top: 0;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     #addBtn {
         background: linear-gradient(90deg, #038400, #00ff21);
         border: none;
         cursor: pointer;
         border-radius: 12px;
         font-size: 10px;
-        height: 2em;
-        width: 6em;
+        height:3em;
+        width: 10em;
     }
 
     #removeBtn {
@@ -132,8 +153,8 @@ button {
         cursor: pointer;
         border-radius: 12px;
         font-size: 10px;
-        height: 2em;
-        width: 7em;
+        height:3em;
+        width: 10em;
     }
     #sortBtn{
         background: linear-gradient(90deg, #b59101, #fff200);
@@ -141,8 +162,8 @@ button {
         cursor: pointer;
         border-radius: 12px;
         font-size: 10px;
-        height:2em;
-        width: 6em;
+        height:3em;
+        width: 10em;
     }
 
     #assignments-div {
@@ -156,7 +177,7 @@ button {
     }
 
     #priority-div {
-        width: 11em;
+        width: 14em;
         margin: 8px;
         padding: 3px;
         background: radial-gradient(#5a5a5a, #424242);
@@ -168,4 +189,12 @@ button {
         font-size: 10px;
     }
 
+    #org-button-div{
+        position: relative;
+        top: 0;
+    }
+    #org-form-div{
+        position: relative;
+        top: 0;
+    }
 }

@@ -7,7 +7,6 @@ let tasks = [];
 let idAssigner = 1;
 supabase = createClient(supabaseURL, supabaseAnonKey);
 //fetch amd display user data
-const profileDataDiv = document.getElementById("profile-data");
 let sessions = null;
 async function getSession(){
     sessions = await supabase.auth.getSession();
@@ -75,7 +74,7 @@ const sortBtnClicked = () => {
     else
         form.style.display = 'none';
 };
-document.getElementById("org-importance-slider").addEventListener("change", (e) => {
+document.getElementById("org-importance-slider").addEventListener("change", () => {
     document.getElementById("org-importance-value").textContent = "Selected Importance: "+document.getElementById("org-importance-slider").value;
 })
 document.getElementById("add-form").addEventListener('submit', (event) => {
@@ -87,7 +86,7 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
     let dueMonth = parseInt(document.getElementById('org-date-month').value);
     let dueDay = parseInt(document.getElementById('org-date-day').value);
     let dueYear = parseInt(document.getElementById('org-date-year').value);
-    if(dueMonth>0&&dueMonth<12&&dueDay>0&&dueDay<31){
+    if(dueMonth>0&&dueMonth<=12&&dueDay>0&&dueDay<=31){
         tasks.push([taskName, taskImportance, dueMonth, dueDay, dueYear, idAssigner]);
         idAssigner++;
     }else {
@@ -102,7 +101,7 @@ document.getElementById("add-form").addEventListener('submit', (event) => {
 document.getElementById("remove-form").addEventListener('submit', (event) => {
     event.preventDefault();
     let idToRemove = document.getElementById("org-remove-txtbox").value;
-    if (idToRemove <=0 || idToRemove >= tasks.length++) {
+    if (idToRemove <=0 || idToRemove > tasks.length++) {
         console.log("Error: Invalid Index");
         document.getElementById('error-msg').textContent="Error: Invalid Index";
         document.getElementById("error-msg").style.display= 'block';
@@ -135,11 +134,14 @@ const updateDisplay = () => {
     }
 };
 const removeTask = (id) => {
-    tasks.splice(id - 1, 1);
-    for (let i = 0; i < tasks.length; i++) {
-        tasks[i][5] = i + 1;
-        //console.log('hi')
-        console.log(tasks[i][5]);
+    //tasks.splice(id - 1, 1);//error comes from here it leaves an empty slot in the array
+    console.log("Before "+tasks);
+    tasks=tasks.filter(task => task!==tasks[id-1]);
+    console.log("after "+ tasks);
+    for (let i = 0; i < tasks.length-1; i++) {
+        for (let i = 0; i < tasks.length; i++) {
+            tasks[i][5] = i + 1;
+        }
     }
     idAssigner--
     updateSupabaseArrays();
@@ -173,13 +175,22 @@ function arrSort(arr, index) {
     }
     return arr;
 }
-document.getElementById("sortByPriority").addEventListener('click', (event) => {
+document.getElementById("sortByPriority").addEventListener('click', () => {
     tasks = arrSort(arrSort(arrSort(arrSort(tasks, 3),  2) , 4) , 1);
     updateSupabaseArrays();
     updateDisplay();
 })
-document.getElementById("sortByDueDate").addEventListener('click', (event) => {
+document.getElementById("sortByDueDate").addEventListener('click', () => {
     tasks = arrSort( arrSort( arrSort( arrSort(tasks, 1), 3), 2), 4);
     updateSupabaseArrays();
     updateDisplay();
 })
+
+let assignmentContainer = document.getElementById('assignments-div');
+let priorityContainer = document.getElementById('priority-div');
+assignmentContainer.addEventListener('scroll', () => {
+    priorityContainer.scrollTop = assignmentContainer.scrollTop;
+});
+priorityContainer.addEventListener('scroll', () => {
+    assignmentContainer.scrollTop = priorityContainer.scrollTop;
+});

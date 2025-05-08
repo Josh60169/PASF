@@ -58,7 +58,10 @@ button:hover{
     font-style: normal;
     font-size: 20px;
 }
-
+#left{
+    position: relative;
+    top: -16.5em;
+}
 
 .cyan{
     color: #5ce1e6;
@@ -113,6 +116,27 @@ nav {
     height: 50px;
 }
 
+@keyframes bounce {
+    40% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.scrollText{
+    position: absolute;
+    bottom: 10em;
+    right: 5em;
+    display: block;
+    animation: bounce;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
 #hr-line {
     border-width: 5px;
 }
@@ -126,7 +150,7 @@ nav {
     border-radius: 25px;
 }
 
-@media (max-width: 1200px) and (min-width: 601px) {
+@media (max-width: 1400px) and (min-width: 901px) {
     .nav-element {
         float: left;
         margin: 2% 0% 2% 8%;
@@ -155,13 +179,22 @@ nav {
         width: 150px;
         height: 40px;
     }
-
+    .scrollText{
+        position: absolute;
+        bottom: 10em;
+        right: 5em;
+        display: block;
+    }
+    #left{
+        position: relative;
+        top: 0;
+    }
     .headerOrbitron{
         font-size: 55px;
     }
 }
 
-@media  (max-width: 600px) {
+@media (max-width: 900px) {
     .container {
         max-width: 350px;
         margin: 25px auto;
@@ -170,7 +203,10 @@ nav {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         border-radius: 25px;
     }
-
+button{
+    height: 35px;
+    width: 90px;
+}
     .boldRobotoF{
         font-family: "RobotoF", sans-serif;
         font-optical-sizing: auto;
@@ -201,14 +237,17 @@ nav {
         font-style: normal;
         font-size: 15px;
     }
-
+    #left{
+        position: relative;
+        top: 0;
+    }
     input{
         width: 100%;
     }
 
     .nav-element {
         float: left;
-        margin: 1% 1% 8% 5%;
+        margin: 1% 2% 10% 8%;
         padding: 1px;
         list-style-type: none;
         display: block;
@@ -233,5 +272,11 @@ nav {
     .logo {
         width: 78px;
         height: 23px;
+    }
+    .scrollText{
+        position: absolute;
+        bottom: 10em;
+        right: 5em;
+        display: none;
     }
 }
