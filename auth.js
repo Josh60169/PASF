@@ -30,7 +30,6 @@ signupBtn?.addEventListener("click", async () =>{
     const city = document.getElementById("city").value;
     if(firstName && lastName && city){
         const{error: signupError} = await supabase.auth.signUp({email, password});
-        //console.log(user);
         if(signupError){
             document.getElementById("error-msg").textContent = signupError.message;
         } else {
