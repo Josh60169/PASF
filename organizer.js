@@ -18,7 +18,7 @@ getSession().then(sessions =>{
 }).catch(error =>{console.log('Error fetching session: ', error);
 });
 async function getUserProfile(){
-    const {data: userProfile, error} = await supabase.from('table1').select();//'*').eq('id',session.user.id).single();
+    const {data: userProfile, error} = await supabase.from('table1').select();
     if(error){
         console.log('Error fetching user data: ',error);
         return null;
@@ -134,10 +134,7 @@ const updateDisplay = () => {
     }
 };
 const removeTask = (id) => {
-    //tasks.splice(id - 1, 1);//error comes from here it leaves an empty slot in the array
-    console.log("Before "+tasks);
-    tasks=tasks.filter(task => task!==tasks[id-1]);
-    console.log("after "+ tasks);
+    tasks = tasks.filter(task => task!==tasks[id-1]);
     for (let i = 0; i < tasks.length-1; i++) {
         for (let i = 0; i < tasks.length; i++) {
             tasks[i][5] = i + 1;
