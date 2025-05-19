@@ -62,14 +62,6 @@ const countDownTimer = () => {
         setTimer(parseInt(time[0]) - 1, 59, 59)
     } else {
         timerFlag = true;
-        // stopBtn.disabled = true;
-        // startBtn.disabled = false;
-
-        // if (alarmFlag) {
-        //     alarmFlag = false;
-        //     alarmSound.pause();
-        //     alarmSound.currentTime = 0;
-        // }
         timerAlarm();
     }
 };
@@ -123,8 +115,6 @@ const stopTimer = () => {
     if (timerFlag) {
         clearInterval(countDownID);
         clearInterval(stopTimerID);
-        // startBtn.disabled = false;
-        // stopBtn.disabled = true;
     }
 };
 
