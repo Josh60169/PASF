@@ -1,4 +1,3 @@
 # PASF
-#### v4.2
-An app for students for daily tasks.
-
+#### v5.0
+An app for students for daily tasks (specifically studying).
