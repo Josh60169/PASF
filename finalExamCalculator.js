@@ -25,7 +25,6 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
     let grade=Math.round((Acurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
     if(grade<=105&&grade>=0){
         document.getElementById("A").textContent=" You need at least "+grade+"% on the Final to get a A.";
-        //willIsNotTaken=false
     }else if(currentGrade>Acurve && grade<0&&willIsNotTaken){
         document.getElementById("A").textContent="You will get at least a A as your final grade";
         willIsNotTaken=false
@@ -36,7 +35,7 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
     grade=Math.round((Bcurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
     if(grade<=100&&grade>=0){
         document.getElementById("B").textContent=" You need at least "+grade+"% on the Final to get a B.";
-        //willIsNotTaken=false
+
     }else if(currentGrade>Bcurve && grade<0&&willIsNotTaken){
         document.getElementById("B").textContent="You will get at least a B as your final grade";
         willIsNotTaken=false
@@ -47,7 +46,6 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
     grade=Math.round((Ccurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
     if(grade<=100&&grade>=0){
         document.getElementById("C").textContent=" You need at least "+grade+"% on the Final to get a C.";
-        //willIsNotTaken=false
     }else if(currentGrade>Ccurve && grade<0&&willIsNotTaken){
         document.getElementById("C").textContent="You will get at least a C as your final grade";
         willIsNotTaken=false
@@ -58,7 +56,6 @@ document.getElementById("FEC_updateBtn").addEventListener('click',async () => {
     grade=Math.round((Dcurve-currentGrade*(1-gradePercent))/gradePercent * 100) / 100;
     if(grade<=100&&grade>=0){
         document.getElementById("D").textContent=" You need at least "+grade+"% on the Final to get a D.";
-        //willIsNotTaken=false
     }else if(currentGrade>Dcurve && grade<0&&willIsNotTaken){
         document.getElementById("D").textContent="You will get at least a D as your final grade";
         willIsNotTaken=false
